@@ -1,0 +1,9 @@
+{
+  "volume": 100,
+  "lowPassFreq": 170,
+  "bassBoost": 9,
+  "timer": 0,
+  "fadeInSeconds": 2,
+  "fadeOutSeconds": 2,
+  "showStatusBar": true
+}

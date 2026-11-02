@@ -1,0 +1,318 @@
+{
+  "main": {
+    "id": "56342c5b78dbb137",
+    "type": "split",
+    "children": [
+      {
+        "id": "40b274ecc015023f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d0bcadb4bd1be5f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ibn al-Jawzi.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ibn al-Jawzi"
+            }
+          },
+          {
+            "id": "c2f3c35819f7860a",
+            "type": "leaf",
+            "state": {
+              "type": "zotlit-library",
+              "state": {},
+              "icon": "zotlit-mark",
+              "title": "Zotero library"
+            }
+          },
+          {
+            "id": "6abe7e787020e663",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "485347ad5bfb660e",
+    "type": "split",
+    "children": [
+      {
+        "id": "a19c11e4487dcee3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b8122046812342ff",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#Journal",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "39f38a359123f4c5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "88eff596f56a57bc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTime",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "09875ecb8b646b8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "178049e861d7b8db",
+        "type": "tabs",
+        "dimension": 55.208333333333336,
+        "children": [
+          {
+            "id": "d7befa7ebb7b5c7d",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "zotlit-pandoc-citations": true,
+                  "zotlit-citation-connected-only": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "zotlit-color-citation-links": false,
+                  "zotlit-citation-popover": false,
+                  "zotlit-author-title-labels": false,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.2588386562181621,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Local graph"
+            }
+          },
+          {
+            "id": "82bccbe36756be44",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "af3343a771f6e8eb",
+            "type": "leaf",
+            "state": {
+              "type": "zotero-annotation-view",
+              "state": {
+                "followMode": "active-tab",
+                "previousMode": "active-tab"
+              },
+              "icon": "highlighter",
+              "title": "Zotero annotations"
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "5378b58930c2e75c",
+        "type": "tabs",
+        "dimension": 44.791666666666664,
+        "children": [
+          {
+            "id": "96b644ed2e9f29e2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "acccb60743378413",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e4fcf60a4740e0e8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ilmon manifesto.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "bases:Create new base": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false,
+      "zk-prefixer:Create new unique note": false,
+      "bronois:Bronois: toggle brown noise": false,
+      "obsidian-git:Open Git source control": false,
+      "zotlit:Open Zotero annotations": false,
+      "zotlit:Open Zotero library": false
+    }
+  },
+  "active": "6abe7e787020e663",
+  "lastOpenFiles": [
+    "Ibn al-Jawzi.md",
+    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
+    "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+    "literature",
+    "Attachments/11012026-examtomorrowbutthisishype.png",
+    "Untitled.md",
+    "Attachments/Pasted image 20261101192337.png",
+    "Attachments",
+    "README.md",
+    "Clippings/Captured-Thoughts-Saydul-Al-Khatir-Imam-Ibnul-Qayyim.md",
+    "Clippings",
+    "Ibn al-Jawzi's.md",
+    "2_Book Template.md",
+    "Categories/Journal.md",
+    "Vault Settings.md",
+    "ilmonic Architecture.md",
+    "Templates/Bases/Books.base",
+    "Proportional Desparation.md",
+    "Categories/Books.md",
+    "ilmonic Architecture.pdf",
+    "Effortless Competence..md",
+    "Self-Actualization Epiphani-cal Realizations.md",
+    "ilmon manifesto.md",
+    "Attachments/Tagging_with_Templates.png",
+    "vault framework and their affects.md",
+    "Further Tag Systemization.md",
+    "Clippings/Captured Thoughts.md",
+    "ilmon manifesto.docx",
+    "ilmon manifesto.pdf",
+    "ilmon_manifesto/ilmon manifesto_output.tex",
+    "ilmon_manifesto/header.tex",
+    "Zettelkasten/Permanent/wakanda forever.md",
+    "Templates/Quote Template.md",
+    "A time distribution framework for knowledge workers..md",
+    "The One Insightful Epiphany.md",
+    "Attachments/WIN_20261023_16_19_19_Pro.jpg",
+    "Attachments/WIN_20261023_16_18_44_Pro.jpg",
+    "Attachments/Pasted image 20261020104214.png",
+    "Templates/Project Template.md",
+    "Zettelkasten/Literature/Fleeting/202610170418 Having a lot on my head.md",
+    "Categories/Projects.md",
+    "Attachments/Pasted image 20261018164155.png",
+    "Attachments/Pasted image 20261001094916.png",
+    "Attachments/image.jpg",
+    "Tiesin Workflow Overview V1.canvas",
+    "Attachments/Pasted image 20261001084351.png"
+  ]
+}
