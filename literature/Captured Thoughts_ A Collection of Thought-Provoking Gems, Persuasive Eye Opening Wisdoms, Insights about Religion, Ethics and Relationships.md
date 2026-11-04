@@ -19,7 +19,7 @@ views:
     filters: item == this.item
     sort:
       - property: attachment.dateAdded
-        direction: ASC
+        direction: DESC
       - property: sortIndex
         direction: ASC
   - type: annotations

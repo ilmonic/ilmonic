@@ -12,22 +12,30 @@
   },
   "library.document": {
     "node": {
-      "kind": "recent"
+      "kind": "library",
+      "library": {
+        "type": "personal"
+      }
     },
     "facets": [],
     "tags": [],
     "search": "",
-    "sort": [
-      {
-        "property": "lastActivity",
-        "direction": "DESC"
-      }
-    ],
+    "sort": [],
     "card": {
       "allFields": false,
       "annotations": true
     },
     "expanded": [],
     "cardClosed": true
-  }
+  },
+  "reader.recent-colors": [
+    "#ffd400"
+  ],
+  "citation.show-citekey-in-suggester": true,
+  "citation.wikilink-citations": true,
+  "citation.annotation-citations": true,
+  "citation.render-annotation-citations": true,
+  "citation.open-as-links": true,
+  "server.enabled": true,
+  "server.live-update": true
 }

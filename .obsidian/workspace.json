@@ -4,33 +4,10 @@
     "type": "split",
     "children": [
       {
-        "id": "40b274ecc015023f",
+        "id": "1bb31ba0dc661481",
         "type": "tabs",
+        "dimension": 50.94043887147336,
         "children": [
-          {
-            "id": "3d0bcadb4bd1be5f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
-            }
-          },
-          {
-            "id": "c2f3c35819f7860a",
-            "type": "leaf",
-            "state": {
-              "type": "zotlit-library",
-              "state": {},
-              "icon": "zotlit-mark",
-              "title": "Zotero library"
-            }
-          },
           {
             "id": "6abe7e787020e663",
             "type": "leaf",
@@ -43,6 +20,53 @@
               },
               "icon": "lucide-file",
               "title": "Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
+            }
+          }
+        ]
+      },
+      {
+        "id": "40b274ecc015023f",
+        "type": "tabs",
+        "dimension": 49.059561128526646,
+        "children": [
+          {
+            "id": "3d0bcadb4bd1be5f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Religious Exhortations' Eventual Futility.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Religious Exhortations' Eventual Futility"
+            }
+          },
+          {
+            "id": "f6c5a59f766692e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
+            }
+          },
+          {
+            "id": "103af93fec0717d3",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Captured Thoughts"
             }
           }
         ]
@@ -117,50 +141,8 @@
       {
         "id": "178049e861d7b8db",
         "type": "tabs",
-        "dimension": 55.20833333333334,
+        "dimension": 63.821892393320965,
         "children": [
-          {
-            "id": "d7befa7ebb7b5c7d",
-            "type": "leaf",
-            "state": {
-              "type": "localgraph",
-              "state": {
-                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-                "options": {
-                  "collapse-filter": true,
-                  "search": "",
-                  "localJumps": 1,
-                  "localBacklinks": true,
-                  "localForelinks": true,
-                  "localInterlinks": false,
-                  "showTags": false,
-                  "showAttachments": false,
-                  "hideUnresolved": false,
-                  "zotlit-pandoc-citations": true,
-                  "zotlit-citation-connected-only": false,
-                  "collapse-color-groups": true,
-                  "colorGroups": [],
-                  "collapse-display": true,
-                  "showArrow": false,
-                  "textFadeMultiplier": 0,
-                  "nodeSizeMultiplier": 1,
-                  "lineSizeMultiplier": 1,
-                  "zotlit-color-citation-links": false,
-                  "zotlit-citation-popover": false,
-                  "zotlit-author-title-labels": false,
-                  "collapse-forces": true,
-                  "centerStrength": 0.518713248970312,
-                  "repelStrength": 10,
-                  "linkStrength": 1,
-                  "linkDistance": 250,
-                  "scale": 0.2588386562181621,
-                  "close": true
-                }
-              },
-              "icon": "lucide-git-fork",
-              "title": "Local graph"
-            }
-          },
           {
             "id": "82bccbe36756be44",
             "type": "leaf",
@@ -177,7 +159,7 @@
             "state": {
               "type": "zotero-annotation-view",
               "state": {
-                "followMode": "active-tab",
+                "followMode": "zotero-reader",
                 "previousMode": "active-tab"
               },
               "icon": "highlighter",
@@ -185,12 +167,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "5378b58930c2e75c",
         "type": "tabs",
-        "dimension": 44.79166666666666,
+        "dimension": 36.178107606679035,
         "children": [
           {
             "id": "96b644ed2e9f29e2",
@@ -198,7 +180,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+                "file": "Religious Exhortations' Eventual Futility.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -240,12 +222,56 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "d7befa7ebb7b5c7d",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "Religious Exhortations' Eventual Futility.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "zotlit-pandoc-citations": true,
+                  "zotlit-wikilink-citations": true,
+                  "zotlit-citation-connected-only": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "zotlit-color-citation-links": false,
+                  "zotlit-citation-popover": false,
+                  "zotlit-author-title-labels": false,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.2588386562181621,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Local graph"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200.5
+    "width": 399.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -268,13 +294,14 @@
   "active": "3d0bcadb4bd1be5f",
   "lastOpenFiles": [
     "permanent/Writing Of Knowledge.md",
+    "Religious Exhortations' Eventual Futility.md",
     "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
+    "Ibn Al Jawzi.md",
     "Ibn al-Jawzi.md",
     "permanent",
-    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
     "literature",
     "Attachments/11012026-examtomorrowbutthisishype.png",
-    "Untitled.md",
     "Attachments/Pasted image 20261101192337.png",
     "Attachments",
     "README.md",
@@ -307,8 +334,6 @@
     "Attachments/WIN_20261023_16_18_44_Pro.jpg",
     "Attachments/Pasted image 20261020104214.png",
     "Templates/Project Template.md",
-    "Zettelkasten/Literature/Fleeting/202610170418 Having a lot on my head.md",
-    "Categories/Projects.md",
     "Attachments/Pasted image 20261018164155.png",
     "Attachments/Pasted image 20261001094916.png",
     "Attachments/image.jpg",
