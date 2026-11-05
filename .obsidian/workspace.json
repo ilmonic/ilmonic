@@ -4,69 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1bb31ba0dc661481",
+        "id": "8a20d1ac3632fd83",
         "type": "tabs",
-        "dimension": 50.94043887147336,
         "children": [
           {
-            "id": "6abe7e787020e663",
+            "id": "8270e34f9a2f194e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+                "file": "Ilmon's Architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
-            }
-          }
-        ]
-      },
-      {
-        "id": "40b274ecc015023f",
-        "type": "tabs",
-        "dimension": 49.059561128526646,
-        "children": [
-          {
-            "id": "3d0bcadb4bd1be5f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Religious Exhortations' Eventual Futility.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Religious Exhortations' Eventual Futility"
-            }
-          },
-          {
-            "id": "f6c5a59f766692e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
-            }
-          },
-          {
-            "id": "103af93fec0717d3",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Captured Thoughts"
+              "title": "Ilmon's Architecture"
             }
           }
         ]
@@ -132,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 277.5
   },
   "right": {
     "id": "09875ecb8b646b8f",
@@ -151,6 +103,49 @@
               "state": {},
               "icon": "git-pull-request",
               "title": "Source Control"
+            }
+          },
+          {
+            "id": "d7befa7ebb7b5c7d",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "Ilmon's Architecture.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "zotlit-pandoc-citations": true,
+                  "zotlit-wikilink-citations": true,
+                  "zotlit-citation-connected-only": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "zotlit-color-citation-links": false,
+                  "zotlit-citation-popover": false,
+                  "zotlit-author-title-labels": false,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.2588386562181621,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Local graph"
             }
           },
           {
@@ -214,7 +209,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ilmon manifesto.md",
+                "file": "Ilmon's Architecture.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -222,56 +217,14 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
-          },
-          {
-            "id": "d7befa7ebb7b5c7d",
-            "type": "leaf",
-            "state": {
-              "type": "localgraph",
-              "state": {
-                "file": "Religious Exhortations' Eventual Futility.md",
-                "options": {
-                  "collapse-filter": true,
-                  "search": "",
-                  "localJumps": 1,
-                  "localBacklinks": true,
-                  "localForelinks": true,
-                  "localInterlinks": false,
-                  "showTags": false,
-                  "showAttachments": false,
-                  "hideUnresolved": false,
-                  "zotlit-pandoc-citations": true,
-                  "zotlit-wikilink-citations": true,
-                  "zotlit-citation-connected-only": false,
-                  "collapse-color-groups": true,
-                  "colorGroups": [],
-                  "collapse-display": true,
-                  "showArrow": false,
-                  "textFadeMultiplier": 0,
-                  "nodeSizeMultiplier": 1,
-                  "lineSizeMultiplier": 1,
-                  "zotlit-color-citation-links": false,
-                  "zotlit-citation-popover": false,
-                  "zotlit-author-title-labels": false,
-                  "collapse-forces": true,
-                  "centerStrength": 0.518713248970312,
-                  "repelStrength": 10,
-                  "linkStrength": 1,
-                  "linkDistance": 250,
-                  "scale": 0.2588386562181621,
-                  "close": true
-                }
-              },
-              "icon": "lucide-git-fork",
-              "title": "Local graph"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 399.5
+    "width": 399.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -291,49 +244,50 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "3d0bcadb4bd1be5f",
+  "active": "8270e34f9a2f194e",
   "lastOpenFiles": [
-    "permanent/Writing Of Knowledge.md",
-    "Religious Exhortations' Eventual Futility.md",
-    "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
-    "Ibn Al Jawzi.md",
-    "Ibn al-Jawzi.md",
-    "permanent",
-    "literature",
-    "Attachments/11012026-examtomorrowbutthisishype.png",
-    "Attachments/Pasted image 20261101192337.png",
-    "Attachments",
-    "README.md",
-    "Clippings/Captured-Thoughts-Saydul-Al-Khatir-Imam-Ibnul-Qayyim.md",
-    "Clippings",
-    "Ibn al-Jawzi's.md",
-    "2_Book Template.md",
-    "Categories/Journal.md",
-    "Vault Settings.md",
+    "Arkhīf/Qawālib/Person Reference.md",
+    "Ilmon's Architecture.md",
     "ilmonic Architecture.md",
-    "Templates/Bases/Books.base",
-    "Proportional Desparation.md",
-    "Categories/Books.md",
-    "ilmonic Architecture.pdf",
-    "Effortless Competence..md",
-    "Self-Actualization Epiphani-cal Realizations.md",
-    "ilmon manifesto.md",
-    "Attachments/Tagging_with_Templates.png",
-    "vault framework and their affects.md",
+    "Ilmon's Vault Architecture.md",
     "Further Tag Systemization.md",
-    "Clippings/Captured Thoughts.md",
-    "ilmon manifesto.docx",
-    "ilmon manifesto.pdf",
-    "ilmon_manifesto/ilmon manifesto_output.tex",
-    "Zettelkasten/Permanent/wakanda forever.md",
+    "Marājiʿ/Mufakkirūn/Ibn al-Jawzi.md",
+    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+    "Arkhīf",
+    "Arkhīf/Qawālib/Literature Note.md",
+    "Arkhīf/Qawālib/Permanent Note.md",
+    "Arkhīf/Qawālib",
+    "Marājiʿ/Mabāḥith",
+    "Marājiʿ/Mufakkirūn",
+    "Marājiʿ/Muʾallafāt",
+    "Literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+    "Marājiʿ",
+    "Mudawwanāt",
+    "Arkhīf/Murfaqāt",
+    "vault framework and their affects.md",
+    "ilmon manifesto.md",
+    "Arkhīf/Murfaqāt/11012026-examtomorrowbutthisishype.png",
+    "Permanent",
+    "Literature",
+    "Templates/Person Template.md",
+    "Templates/Literature Template.md",
+    "Templates/Permanent Template.md",
     "Templates/Quote Template.md",
-    "A time distribution framework for knowledge workers..md",
-    "The One Insightful Epiphany.md",
+    "Templates/Project Template.md",
+    "Templates/Podcast Template.md",
+    "Templates/Monthly Note Template.md",
+    "Templates/Journal Template.md",
+    "Templates/Evergreen Template.md",
+    "Templates/Daily Note Template.md",
+    "Templates/Clipping Template.md",
+    "Templates/Book Template.md",
+    "Templates/Author Template.md",
+    "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
+    "Attachments/Pasted image 20261101192337.png",
+    "Attachments/Tagging_with_Templates.png",
     "Attachments/WIN_20261023_16_19_19_Pro.jpg",
     "Attachments/WIN_20261023_16_18_44_Pro.jpg",
     "Attachments/Pasted image 20261020104214.png",
-    "Templates/Project Template.md",
     "Attachments/Pasted image 20261018164155.png",
     "Attachments/Pasted image 20261001094916.png",
     "Attachments/image.jpg",

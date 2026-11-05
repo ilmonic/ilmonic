@@ -1,6 +1,6 @@
 The attendance of religious sermons and exhortations has an undeniable bearing unto the heart. And yet it appears that such impact is transient. And such transience is thwarting.
 
-[[Ibn al-Jawzi]] accorded this sweeping pattern to the oscillating nature of the heart in between two forces, each exerting its own pull:
+[[Marājiʿ/Mufakkirūn/Ibn al-Jawzi]] accorded this sweeping pattern to the oscillating nature of the heart in between two forces, each exerting its own pull:
 
 1. Sermons' enchantment of the heart - momentarily deflecting it from the business of the Dunya.
    > [!citation] Page [66](zotero://open/library/items/FYSA9UFZ?annotation=2DZ2U2NW&page=66)
@@ -35,5 +35,3 @@ And thereby Islam even tells you precisely where to try and disperse towards.
 **-> Right in the middle.**
 
 :")
-
-
