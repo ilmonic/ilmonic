@@ -1,0 +1,33 @@
+# ─────────────────────────────
+# Obsidian: per-device state
+# ─────────────────────────────
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+.trash/
+
+# Optional: uncomment to keep plugin data and settings private/per-device
+# .obsidian/plugins/*/data.json
+# .obsidian/appearance.json
+
+# ─────────────────────────────
+# Vault: drafts (not ready for publishing)
+# ─────────────────────────────
+Masūdāt/
+
+# ─────────────────────────────
+# OS junk
+# ─────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*~
+
+# ─────────────────────────────
+# Sync conflicts / editor leftovers
+# ─────────────────────────────
+*.sync-conflict-*
+.syncthing.*
+*.swp

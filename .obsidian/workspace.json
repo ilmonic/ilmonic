@@ -84,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277.5,
-    "collapsed": true
+    "width": 277.5
   },
   "right": {
     "id": "09875ecb8b646b8f",
@@ -245,8 +244,11 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "936ea6b889e9561b",
+  "active": "88eff596f56a57bc",
   "lastOpenFiles": [
+    "New Text Document.txt",
+    "Masūdāt",
+    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
     "11062026 - Ilmon'sVaultStructure.canvas",
     "Ilmon's Architecture.md",
     "Arkhīf/Qawālib/Person Reference.md",
@@ -254,7 +256,6 @@
     "Ilmon's Vault Architecture.md",
     "Further Tag Systemization.md",
     "Marājiʿ/Mufakkirūn/Ibn al-Jawzi.md",
-    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
     "Arkhīf",
     "Arkhīf/Qawālib/Literature Note.md",
     "Arkhīf/Qawālib/Permanent Note.md",
@@ -270,7 +271,6 @@
     "ilmon manifesto.md",
     "Arkhīf/Murfaqāt/11012026-examtomorrowbutthisishype.png",
     "Permanent",
-    "Literature",
     "Templates/Person Template.md",
     "Templates/Literature Template.md",
     "Templates/Permanent Template.md",

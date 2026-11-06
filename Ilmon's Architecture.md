@@ -26,11 +26,12 @@ Principle #1 above underlines this folder structure which is pretty much none-ex
 
 > **ALL NOTES ARE DUMPED INTO THE NOTES FOLDER (MUDAWWANAT)**
 
-| Folder        | Arabic              | Meaning         | Holds                                                                          |
-| ------------- | ------------------- | --------------- | ------------------------------------------------------------------------------ |
-| `Arkhīf/`     | أرشيف (Arkhīf)      | archive         | Everything that is not a note. Contains `Murfaqāt/` and `Qawālib/`             |
-| `Marājiʿ/`    | مراجع (Marājiʿ)     | references      | Markdown notes about one specific thing, person, or domain                     |
-| `Mudawwanāt/` | مدونات (Mudawwanāt) | written records | Markdown notes of type `permanent` or `literature`, each with its own template |
+| Folder        | Arabic | Meaning         | Holds                                                                                                                     |
+| ------------- | ------ | --------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `Arkhīf/`     | أرشيف  | archive         | Everything that is not a note. Contains `Murfaqāt/` and `Qawālib/`                                                        |
+| `Marājiʿ/`    | مراجع  | references      | Markdown notes about one specific thing, person, or domain                                                                |
+| `Mudawwanāt/` | مدونات | written records | Markdown notes of type `permanent` or `literature`, each with its own template                                            |
+| `Masūdāt/`    | مسودات | drafts          | Unpublished *(gitignored)*, unfinished writing. No template, no required references. Promoted to `Mudawwanāt/` or deleted |
 
 `Arkhīf/` contains all that's excluded from search. But serves in the creation, organization and structuring *(Structure Notes)* of the notes and references themselves.
 
