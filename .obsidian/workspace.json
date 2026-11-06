@@ -8,20 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "936ea6b889e9561b",
+            "id": "309b372b1508eedc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ilmon's Architecture.md",
+                "file": "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ilmon's Architecture"
+              "title": "Religious Exhortations' Eventual Futility"
+            }
+          },
+          {
+            "id": "9438e541b3e86fa4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mudawwanāt/The Human Non-Compliance Propensity.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The Human Non-Compliance Propensity"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +108,7 @@
       {
         "id": "178049e861d7b8db",
         "type": "tabs",
-        "dimension": 63.821892393320965,
+        "dimension": 76.8250289687138,
         "children": [
           {
             "id": "82bccbe36756be44",
@@ -106,56 +121,14 @@
             }
           },
           {
-            "id": "d7befa7ebb7b5c7d",
-            "type": "leaf",
-            "state": {
-              "type": "localgraph",
-              "state": {
-                "file": "Ilmon's Architecture.md",
-                "options": {
-                  "collapse-filter": true,
-                  "search": "",
-                  "localJumps": 1,
-                  "localBacklinks": true,
-                  "localForelinks": true,
-                  "localInterlinks": false,
-                  "showTags": false,
-                  "showAttachments": false,
-                  "hideUnresolved": false,
-                  "zotlit-pandoc-citations": true,
-                  "zotlit-wikilink-citations": true,
-                  "zotlit-citation-connected-only": false,
-                  "collapse-color-groups": true,
-                  "colorGroups": [],
-                  "collapse-display": true,
-                  "showArrow": false,
-                  "textFadeMultiplier": 0,
-                  "nodeSizeMultiplier": 1,
-                  "lineSizeMultiplier": 1,
-                  "zotlit-color-citation-links": false,
-                  "zotlit-citation-popover": false,
-                  "zotlit-author-title-labels": false,
-                  "collapse-forces": true,
-                  "centerStrength": 0.518713248970312,
-                  "repelStrength": 10,
-                  "linkStrength": 1,
-                  "linkDistance": 250,
-                  "scale": 0.2588386562181621,
-                  "close": true
-                }
-              },
-              "icon": "lucide-git-fork",
-              "title": "Local graph"
-            }
-          },
-          {
             "id": "af3343a771f6e8eb",
             "type": "leaf",
             "state": {
               "type": "zotero-annotation-view",
               "state": {
-                "followMode": "zotero-reader",
-                "previousMode": "active-tab"
+                "followMode": "pinned",
+                "previousMode": "zotero-reader",
+                "pinnedItemKey": "VC7A4TPD"
               },
               "icon": "highlighter",
               "title": "Zotero annotations"
@@ -167,7 +140,7 @@
       {
         "id": "5378b58930c2e75c",
         "type": "tabs",
-        "dimension": 36.178107606679035,
+        "dimension": 23.174971031286212,
         "children": [
           {
             "id": "96b644ed2e9f29e2",
@@ -209,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ilmon's Architecture.md",
+                "file": "Mudawwanāt/The Human Non-Compliance Propensity.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -217,14 +190,56 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "d7befa7ebb7b5c7d",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "Mudawwanāt/The Human Non-Compliance Propensity.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "zotlit-pandoc-citations": true,
+                  "zotlit-wikilink-citations": true,
+                  "zotlit-citation-connected-only": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "zotlit-color-citation-links": false,
+                  "zotlit-citation-popover": false,
+                  "zotlit-author-title-labels": false,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.16966831297178372,
+                  "close": true
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Local graph"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 399.5,
-    "collapsed": true
+    "width": 415.0999755859375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -244,18 +259,19 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "88eff596f56a57bc",
+  "active": "9438e541b3e86fa4",
   "lastOpenFiles": [
+    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+    "Mudawwanāt/The Human Non-Compliance Propensity.md",
+    "Marājiʿ/Mufakkirūn/Ibn al-Jawzi.md",
+    "Ilmon's Architecture.md",
+    "11062026 - Ilmon'sVaultStructure.canvas",
     "New Text Document.txt",
     "Masūdāt",
-    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
-    "11062026 - Ilmon'sVaultStructure.canvas",
-    "Ilmon's Architecture.md",
     "Arkhīf/Qawālib/Person Reference.md",
     "ilmonic Architecture.md",
     "Ilmon's Vault Architecture.md",
     "Further Tag Systemization.md",
-    "Marājiʿ/Mufakkirūn/Ibn al-Jawzi.md",
     "Arkhīf",
     "Arkhīf/Qawālib/Literature Note.md",
     "Arkhīf/Qawālib/Permanent Note.md",
@@ -270,7 +286,6 @@
     "vault framework and their affects.md",
     "ilmon manifesto.md",
     "Arkhīf/Murfaqāt/11012026-examtomorrowbutthisishype.png",
-    "Permanent",
     "Templates/Person Template.md",
     "Templates/Literature Template.md",
     "Templates/Permanent Template.md",
