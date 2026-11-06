@@ -34,10 +34,10 @@ Principle #1 above underlines this folder structure which is pretty much none-ex
 
 `Arkhīf/` contains all that's excluded from search. But serves in the creation, organization and structuring *(Structure Notes)* of the notes and references themselves.
 
-|Subfolder|Arabic|Meaning|Holds|
-|---|---|---|---|
-|`Arkhīf/Murfaqāt/`|مرفقات|attachments|Anything embedded in a note that is not a note: images, voice notes, drawings|
-|`Arkhīf/Qawālib/`|قوالب|templates|The Templates plugin's source folder. Holds no vault content|
+| Subfolder          | Arabic | Meaning     | Holds                                                                         |
+| ------------------ | ------ | ----------- | ----------------------------------------------------------------------------- |
+| `Arkhīf/Murfaqāt/` | مرفقات | attachments | Anything embedded in a note that is not a note: images, voice notes, drawings |
+| `Arkhīf/Qawālib/`  | قوالب  | templates   | The Templates plugin's source folder. Holds no vault content                  |
 
 with `Marājiʿ/` being the only folder composed of **sub-folders** *(for the better management of referencing terms as well as their re-occurrence).
 
@@ -46,3 +46,37 @@ with `Marājiʿ/` being the only folder composed of **sub-folders** *(for the be
 | `Marājiʿ/Muʾallafāt/` | مؤلفات | authored works    |
 | `Marājiʿ/Mufakkirūn/` | مفكرون | thinkers          |
 | `Marājiʿ/Mabāḥith/`   | مباحث  | fields of inquiry |
+
+This diagram outlines how all of the vault centers around the building of the `Mudawwanāt`
+
+![[11062026 - Ilmon'sVaultStructure.canvas]]
+#  5. Workflow
+
+## Reading Workflow
+I spent way too much time contemplating the flow of reading, one of the most straightforward actions to ever be, if not the agonizing tradeoff between the reading of:
+1. The original Arabic where you tap into the Author's own raw articulation and choice of words in his depiction of his thoughts. An advantage I will murder people for :D 
+2. The translated English where I find easy to follow shapes of arguments obliged by the childlike unsophistication of the almighty English language.
+
+| Comparison | English                                                                                                                                | Arabic                                                                 |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Good       | Easy to follow and thus faster reading, Ready made scholarly translation with correct terminologies, Instant conversions unto content. | The absolutely definition of a mind-boggling yet elegant perfection.   |
+| Bad        | Foreign unwelcomed intermediation in my understanding of the author's intended meaning (lost/added meaning)                            | More work and will check the translations either ways *(for content)*. |
+
+After spending this initial week *(Nov 1-6th)* sparsely thinking about it. The final version of the flow would be:
+1. I read original for my own utter amusement and self-actualization :D
+2. I take janky notes in English for what I think with no interventions from translations *(it's weird but reading translations affect how I initially thought about the original text which I despise)*
+The first two steps enclose the "Reading"/"Capturing" process. But reading as an action doesn't end here.
+3. Once starting to "Organize" *(the next step of [[CODE]])*, I will be **coupling** the citations in Arabic to their place in the English citation on Zotero, as well as refine the notes previously taken.
+The organization on step 3 allows for a **grappling** with earlier insights, an immaculate stepping stone for step 4.
+4. "Distillation" of the chapter unto a literature notes.
+5. "Expression" will then proceed with a translation into a visual medium.
+
+How elegant is that?
+
+## Writing Workflow
+
+Haven't wrote much, don't know much.
+
+## Production Workflow
+
+Never done anything yet...

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8a20d1ac3632fd83",
+        "id": "887e1577e0f38b8e",
         "type": "tabs",
         "children": [
           {
-            "id": "8270e34f9a2f194e",
+            "id": "936ea6b889e9561b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -84,7 +84,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277.5
+    "width": 277.5,
+    "collapsed": true
   },
   "right": {
     "id": "09875ecb8b646b8f",
@@ -244,10 +245,11 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "8270e34f9a2f194e",
+  "active": "936ea6b889e9561b",
   "lastOpenFiles": [
-    "Arkhīf/Qawālib/Person Reference.md",
+    "11062026 - Ilmon'sVaultStructure.canvas",
     "Ilmon's Architecture.md",
+    "Arkhīf/Qawālib/Person Reference.md",
     "ilmonic Architecture.md",
     "Ilmon's Vault Architecture.md",
     "Further Tag Systemization.md",
@@ -282,7 +284,6 @@
     "Templates/Clipping Template.md",
     "Templates/Book Template.md",
     "Templates/Author Template.md",
-    "literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
     "Attachments/Pasted image 20261101192337.png",
     "Attachments/Tagging_with_Templates.png",
     "Attachments/WIN_20261023_16_19_19_Pro.jpg",
