@@ -19,6 +19,4 @@ And it is for this prevalent and pervasive nature that it's **less foreseeable**
 > Rather, it is indeed more of a surprise ('ajab) to find the innate nature of humans succeeding in overcoming these attracdons and thereby becoming tamed and controlled!
 >
 > «صيد الخاطر» (ص25):  
-> «فأما الطبع، فجواذبه كثيرة، وليس العجب أن يغلب، إنما العجب أن يغلب.»
-
-**Gorgeous saying btw.**
+> «فأما الطبع، فجواذبه كثيرة، **وليس العجب أن يغلب، إنما العجب أن يغلب.**»
