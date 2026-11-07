@@ -1,5 +1,5 @@
 ---
-noteType: author
+noteType: "#type/author"
 noteCreation: 2026-11-01
 arabicName: ابن الجوزي
 fullName: Abu'l-Faraj ʿAbd al-Raḥmān ibn ʿAlī ibn Muḥammad

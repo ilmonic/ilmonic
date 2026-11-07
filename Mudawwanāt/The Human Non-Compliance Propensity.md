@@ -4,7 +4,7 @@ Chapter 2 - Worldly Pleasures versus Pleasures o f the  Hereafter
 created @Nov6th
 ```
 We are more often inclined to the worldly pleasure more than it is to the Hereafter despite the persistent warnings and promises of the Qur'an.
-It's indeed in our nature. Beautifully depicted by this metaphor by [[Marājiʿ/Mufakkirūn/Ibn al-Jawzi|Ibn al-Jawzi]]:
+It's indeed in our nature. Beautifully depicted by this metaphor by [[Marājiʿ/Mufakkirūn/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]]:
 
 > [!note] Page [69](zotero://open/library/items/FYSA9UFZ?annotation=L2NIQG75&page=69)
 >

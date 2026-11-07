@@ -3,24 +3,26 @@
   "release.previous-version": "2.2.1",
   "note.default-profile": {
     "bindings": {
-      "note.literature-folder": "Mudawwanāt",
+      "note.literature-folder": "Marājiʿ/Muʾallafāt",
       "citation.references-style": null,
-      "note.import-folder": "Marājiʿ/Muʾallafāt",
-      "note.import-colored-highlights": false,
-      "note.import-annotations-as-template": false
+      "note.import-folder": "Arkhīf",
+      "note.import-colored-highlights": true,
+      "note.import-annotations-as-template": true
     }
   },
   "library.document": {
     "node": {
-      "kind": "library",
-      "library": {
-        "type": "personal"
-      }
+      "kind": "recent"
     },
     "facets": [],
     "tags": [],
     "search": "",
-    "sort": [],
+    "sort": [
+      {
+        "property": "lastActivity",
+        "direction": "DESC"
+      }
+    ],
     "card": {
       "allFields": false,
       "annotations": true
@@ -38,5 +40,6 @@
   "citation.open-as-links": true,
   "server.enabled": true,
   "server.live-update": true,
-  "template.folder": "Templates"
+  "template.folder": "Arkhīf/Qawālib",
+  "attachment.folder-path": "Arkhīf/Murfaqāt"
 }

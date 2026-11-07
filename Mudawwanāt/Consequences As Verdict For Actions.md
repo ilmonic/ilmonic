@@ -15,7 +15,7 @@ Which implies the literal **vitality** of those decisions, for they perpetually 
 
 Precisely what "**Delayed-Gratification**" was all about, and those discipline extremist gurus centered their career around.
 
-[[Marājiʿ/Mufakkirūn/Ibn al-Jawzi|Ibn al-Jawzi]] will then point to role of the past in the decision making process:
+[[Marājiʿ/Mufakkirūn/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]] will then point to role of the past in the decision making process:
 
 > [!note] Page [71](zotero://open/library/items/FYSA9UFZ?annotation=LXUE7QTX&page=71)
 >
