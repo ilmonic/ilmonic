@@ -113,8 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277.5,
-    "collapsed": true
+    "width": 277.5
   },
   "right": {
     "id": "09875ecb8b646b8f",
@@ -276,12 +275,12 @@
   },
   "active": "db43f712c2203d73",
   "lastOpenFiles": [
+    "11062026 - Ilmon'sVaultStructure.canvas",
     "Mudawwanāt/The Human Non-Compliance Propensity.md",
-    "Mudawwanāt/Consequences As Verdict For Actions.md",
     "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+    "Mudawwanāt/Consequences As Verdict For Actions.md",
     "Marājiʿ/Mufakkirūn/Ibn al-Jawzi.md",
     "Ilmon's Architecture.md",
-    "11062026 - Ilmon'sVaultStructure.canvas",
     "New Text Document.txt",
     "Masūdāt",
     "Arkhīf/Qawālib/Person Reference.md",
@@ -313,7 +312,6 @@
     "Templates/Evergreen Template.md",
     "Templates/Daily Note Template.md",
     "Templates/Clipping Template.md",
-    "Templates/Book Template.md",
     "Attachments/Pasted image 20261101192337.png",
     "Attachments/Tagging_with_Templates.png",
     "Attachments/WIN_20261023_16_19_19_Pro.jpg",

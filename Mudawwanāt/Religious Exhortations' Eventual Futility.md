@@ -3,7 +3,7 @@ templates are yet to be made until then this is from:
 Chapter 2 - Worldly Pleasures versus Pleasures o f the  Hereafter
 created @Nov4th? I think not sure.
 ```
-The attendance of religious sermons and exhortations has an undeniable bearing unto the heart. And yet it appears that such impact is transient. And such transience is thwarting.
+The attendance of religious sermons and exhortations has an undeniable bearing on the heart. And yet it appears that such impact is transient. And such transience is thwarting.
 
 [[Marājiʿ/Mufakkirūn/Ibn al-Jawzi|Ibn al-Jawzi]] accorded this sweeping pattern to the oscillating nature of the heart in between two forces, each exerting its own pull:
 
@@ -25,7 +25,7 @@ The attendance of religious sermons and exhortations has an undeniable bearing u
 
 Meanwhile fluctuating in this spectrum, many come to see that both captivities are worlds apart from each other *(literally)*.
 
-And in that same fluctuation do people decide and disperse towards that which they think they should be hold unto.
+And in that same fluctuation do people decide and disperse towards that which they think they should hold unto.
 
 > [!note] [Sahih Muslim 2750a](https://sunnah.com/muslim:2750a)‏
 >
@@ -33,8 +33,7 @@ And in that same fluctuation do people decide and disperse towards that which th
 > 
 > حَدَّثَنَا يَحْيَى ..‏.‏ قُلْتُ يَا رَسُولَ اللَّهِ نَكُونُ عِنْدَكَ تُذَكِّرُنَا بِالنَّارِ وَالْجَنَّةِ حَتَّى كَأَنَّا رَأْىَ عَيْنٍ فَإِذَا خَرَجْنَا مِنْ عِنْدِكَ عَافَسْنَا الأَزْوَاجَ وَالأَوْلاَدَ وَالضَّيْعَاتِ نَسِينَا كَثِيرًا ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ وَالَّذِي نَفْسِي بِيَدِهِ إِنْ لَوْ تَدُومُونَ عَلَى مَا تَكُونُونَ عِنْدِي وَفِي الذِّكْرِ لَصَافَحَتْكُمُ الْمَلاَئِكَةُ عَلَى فُرُشِكُمْ وَفِي طُرُقِكُمْ وَلَكِنْ يَا حَنْظَلَةُ سَاعَةً وَسَاعَةً ‏"‏ ‏.‏ ثَلاَثَ مَرَّاتٍ.
 
-Three times the messenger of Allah SAW said it. How gorgeous is that?
 And thereby Islam even tells you precisely where to try and disperse towards.
 **-> Right in the middle.**
-
+Three times the messenger of Allah SAW said it. How gorgeous is that?
 :")

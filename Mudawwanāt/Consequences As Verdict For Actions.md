@@ -24,7 +24,7 @@ Precisely what "**Delayed-Gratification**" was all about, and those discipline e
 > «صيد الخاطر» (ص25):  
 > «وبيان هذا في المستقبل يتبين بذكر الماضي»
 
-As in the remembrance of the past you establish no pleasures savored nor effort expanded endures.
+As in the remembrance of the past you establish that no pleasures savored nor effort expanded endures.
 
 > [!note] Page [71](zotero://open/library/items/FYSA9UFZ?annotation=6G99T7Z4&page=71)
 >
@@ -34,7 +34,7 @@ As in the remembrance of the past you establish no pleasures savored nor effort 
 > «وهو أنك لا تخلو أن تكون عصيت الله في عمرك، أو أطعته، فأين لذة معصيتك؟! وأين تعب طاعتك؟!  
 > هيهات، رحل كل بما فيه، فليت الذنوب إذا تخلت خلت!»
 
-And yet perpetual establishment of such fact never ceases the human to keep testing it. Which establishes **another** fact, [[Mudawwanāt/The Human Non-Compliance Propensity|The Human Non-Compliance Propensity]].
+And yet perpetual establishment of such fact never ceases the human to keep testing it. Establishing **another** fact, [[Mudawwanāt/The Human Non-Compliance Propensity|The Human Non-Compliance Propensity]].
 
 > [!note] Page [72](zotero://open/library/items/FYSA9UFZ?annotation=UTMHWADE&page=72)
 >
@@ -44,7 +44,7 @@ And yet perpetual establishment of such fact never ceases the human to keep test
 > «أتراك ما علمت أن الأمر بعواقبه؟! **فراقب العواقب تسلم، ولا تمل مع هوى الحس فتندم.**»
 
 And it is worth reflecting no pleasure that's wasn't savored left any guilt nor grief.
-Couple that, with the ubiquitous regret:
+And that every other marked its ubiquitous regret:
 
 > [!note] Page [72](zotero://open/library/items/FYSA9UFZ?annotation=QTX425YR&page=72)
 >
