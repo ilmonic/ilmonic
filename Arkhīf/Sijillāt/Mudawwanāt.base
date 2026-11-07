@@ -1,0 +1,15 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.folder == "Mudawwanāt"
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - file.ctime
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 450

@@ -50,7 +50,7 @@ with `Marājiʿ/` being the only folder composed of **sub-folders** *(for the be
 
 This diagram outlines how all of the vault centers around the building of the `Mudawwanāt`
 
-![[11062026 - Ilmon'sVaultStructure.canvas]]
+![[Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas]]
 #  5. Workflow
 
 ## Reading Workflow

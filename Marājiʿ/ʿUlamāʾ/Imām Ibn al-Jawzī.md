@@ -1,10 +1,10 @@
 ---
-noteType: "#type/author"
-noteCreation: 2026-11-01
+tags:
+  - type/author
 arabicName: ابن الجوزي
 fullName: Abu'l-Faraj ʿAbd al-Raḥmān ibn ʿAlī ibn Muḥammad
 lifePeriod: 1116 – 1201
-performedRoles:
+roles:
   - Muslim jurisconsult
   - preacher
   - orator
@@ -14,4 +14,8 @@ performedRoles:
   - judge
   - hagiographer
   - philologist
+mentors:
 ---
+# Books Authored
+
+![[Arkhīf/Sijillāt/Aʿmāl.base#Author]]

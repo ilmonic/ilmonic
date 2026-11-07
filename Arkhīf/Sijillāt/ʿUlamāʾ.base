@@ -1,0 +1,10 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.folder == "Marājiʿ/ʿUlamāʾ"
+views:
+  - type: table
+    name: All
+    sort:
+      - property: file.name
+        direction: ASC

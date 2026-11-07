@@ -13,14 +13,14 @@ frontmatter:
     expr: zt.title
   - key: arabicTitle
     expr: zt.extra.raw
-  - key: Author
-    expr: '"[[Marājiʿ/Mufakkirūn/" | append: zt.authorsShort | append: "|" | append: zt.authorsShort | append: "]]"'
-  - key: Publisher
+  - key: author
+    expr: '"[[Marājiʿ/ʿUlamāʾ/" | append: zt.authorsShort | append: "|" | append: zt.authorsShort | append: "]]"'
+  - key: publisher
     expr: zt.publisher
-  - key: noteType
+  - key: tags
     expr: '"#type/" | append: zt.itemType'
-  - key: noteCreation
-    expr: '"now" | date: "%Y-%m-%d"'
+  - key: rating
+    value: {"$eval":"3"}
 ---
 # [Annotations]({{ zt.backlink }})
 

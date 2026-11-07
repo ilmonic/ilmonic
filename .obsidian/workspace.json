@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "f77c79516a23f408",
+        "id": "4b8880e2783ba8a4",
         "type": "tabs",
         "children": [
           {
-            "id": "06bdb75042bb76d1",
+            "id": "d0c2e56adb3a4fe8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Arkhīf/Qawālib/zotlit-profile.default.md",
+                "file": "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "zotlit-profile.default"
+              "title": "Imām Ibn al-Jawzī"
+            }
+          },
+          {
+            "id": "3fc9c1dfa5feff23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Imām Ibn al-Jawzī"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +108,7 @@
       {
         "id": "178049e861d7b8db",
         "type": "tabs",
-        "dimension": 76.8250289687138,
+        "dimension": 76.74418604651163,
         "children": [
           {
             "id": "82bccbe36756be44",
@@ -125,7 +140,7 @@
       {
         "id": "5378b58930c2e75c",
         "type": "tabs",
-        "dimension": 23.174971031286212,
+        "dimension": 23.25581395348837,
         "children": [
           {
             "id": "96b644ed2e9f29e2",
@@ -182,7 +197,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Arkhīf/Qawālib/zotlit-profile.default.md",
+                "file": "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -211,7 +226,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.16966831297178372,
+                  "scale": 0.4675508913371737,
                   "close": true
                 }
               },
@@ -224,7 +239,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.0999755859375
+    "width": 415.0999755859375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -244,41 +260,41 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "06bdb75042bb76d1",
+  "active": "3fc9c1dfa5feff23",
   "lastOpenFiles": [
-    "11062026 - Ilmon'sVaultStructure.canvas",
-    "Arkhīf/Murfaqāt/11012026-examtomorrowbutthisishype.png",
-    "Marājiʿ/Mufakkirūn/Imām Ibn al-Jawzī.md",
-    "Ilmon's Architecture.md",
+    "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+    "Arkhīf/Qawālib/Author Reference.md",
+    "Marājiʿ/Aʿmāl/Captured Thoughts.md",
+    "Arkhīf/Sijillāt/Aʿmāl.base",
+    "Arkhīf/Sijillāt/ʿUlamāʾ.base",
+    "Arkhīf/Sijillāt/ʿUlūm.base",
+    "Arkhīf/Sijillāt/Qawālib.base",
+    "Arkhīf/Sijillāt/Marājiʿ.base",
+    "Arkhīf/Sijillāt/Mudawwanāt.base",
+    "Arkhīf/Architecture.md",
+    "Arkhīf/Murfaqāt/11012026 - examtomorrowbutthisishype.png",
     "Arkhīf/Murfaqāt/20261107 - perfectedtheliteratureflow.png",
+    "Arkhīf/Lawḥāt",
+    "Arkhīf/Qawālib/zotlit-profile.default.md",
+    "Arkhīf/Sijillāt/Marājiʿ - Copy (3).base",
+    "Arkhīf/Sijillāt/Marājiʿ - Copy (2).base",
+    "Arkhīf/Sijillāt/Marājiʿ - Copy.base",
+    "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
     "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
     "Arkhīf/20261107 - perfectedtheliteratureflow.png",
     "20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/20261107 - perfectedtheliteratureflow.png",
-    "Murfaqāt/20261107 - perfectedtheliteratureflow",
-    "Marājiʿ/Muʾallafāt/Captured Thoughts.md",
     "Murfaqāt/Pasted image 20261107115432.png",
-    "Arkhīf/Qawālib/zotlit-profile.default.md",
     "Mudawwanāt/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
     "Mudawwanāt/Imām Ibn al-Jawzī.md",
     "Marājiʿ/Muʾallafāt/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-    "Murfaqāt",
-    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
     "Arkhīf/Qawālib/Literature Note.md",
     "Arkhīf/Qawālib/Permanent Note.md",
-    "Arkhīf/Qawālib/Person Reference.md",
     "Mudawwanāt/The Human Non-Compliance Propensity.md",
     "Mudawwanāt/Consequences As Verdict For Actions.md",
-    "New Text Document.txt",
-    "Masūdāt",
     "ilmonic Architecture.md",
     "Ilmon's Vault Architecture.md",
     "Further Tag Systemization.md",
-    "Arkhīf",
-    "Arkhīf/Qawālib",
-    "Marājiʿ/Mabāḥith",
-    "Marājiʿ/Mufakkirūn",
-    "Marājiʿ/Muʾallafāt",
     "Literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
     "vault framework and their affects.md",
     "ilmon manifesto.md",

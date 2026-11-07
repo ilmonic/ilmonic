@@ -1,0 +1,26 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.folder == "Marājiʿ/Aʿmāl"
+views:
+  - type: table
+    name: All
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: publisher
+        direction: ASC
+      - property: rating
+        direction: ASC
+  - type: table
+    name: Author
+    filters:
+      and:
+        - list(author).contains(this)
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: publisher
+        direction: ASC
+      - property: rating
+        direction: ASC
