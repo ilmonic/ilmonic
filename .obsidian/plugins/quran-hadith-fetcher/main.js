@@ -219,7 +219,8 @@ var DEFAULT_FORMATTING = {
   quranAyahOpen: "{",
   quranAyahClose: "}",
   quranAyahStyle: "curly",
-  codeSyntaxMode: "replace"
+  codeSyntaxMode: "replace",
+  traditionalHadithTerms: true
 };
 function wrapLine(text2, prefix, suffix) {
   return `${prefix}${text2}${suffix}`;
@@ -235,8 +236,9 @@ function contentLinePrefix(cfg) {
 function separatorLine(cfg) {
   return prefixCallout(cfg) ? ">" : "";
 }
-function gradeDisplay(grade) {
-  return `${grade.text}${grade.author ? ` (${formatScholarName(grade.author)})` : ""}`;
+function gradeDisplay(grade, traditionalTerms) {
+  const text2 = traditionalTerms ? grade.text.replace(/^Sound\b/iu, "Sahih").replace(/^Good\b/iu, "Hasan") : grade.text;
+  return `${text2}${grade.author ? ` (${formatScholarName(grade.author)})` : ""}`;
 }
 var ARABIC_DIGITS = ["\u0660", "\u0661", "\u0662", "\u0663", "\u0664", "\u0665", "\u0666", "\u0667", "\u0668", "\u0669"];
 function formatAyahDigits(number, arabic) {
@@ -253,8 +255,8 @@ function quranTranslationText(ayah, showFootnotes, renumbered) {
   const text2 = ayah.translation?.text ?? "";
   if (!showFootnotes) {
     if (!ayah.footnotes?.length) return text2;
-    const numbers = new Set(ayah.footnotes.map((footnote) => footnote.number));
-    return text2.replace(/\[(\d+)\]/g, (match, n) => numbers.has(Number(n)) ? "" : match).replace(/\s{2,}/g, " ").trim();
+    const numbers2 = new Set(ayah.footnotes.map((footnote) => footnote.number));
+    return text2.replace(/\[(\d+)\]/g, (match, n) => numbers2.has(Number(n)) ? "" : match).replace(/\s{2,}/g, " ").trim();
   }
   if (!renumbered || renumbered.size === 0) return text2;
   return text2.replace(/\[(\d+)\]/g, (match, n) => {
@@ -288,14 +290,16 @@ function quranBlockText(result, cfg, options) {
   const lines = [];
   const linePrefix = contentLinePrefix(cfg);
   const separator = separatorLine(cfg);
-  if (result.reference.startAyah !== result.reference.endAyah && mode === "merged") {
+  if (result.reference.startAyah !== result.reference.endAyah && (mode === "merged" || mode === "merged-mushaf")) {
+    const mushafOrder = mode === "merged-mushaf";
+    const mergeAyah = (text2, number) => mushafOrder ? `${text2} ${number}` : `${number} ${text2}`;
     if (arabic.length) {
-      const text2 = arabic.map((a) => `${formatAyahNumber(a.reference.startAyah, cfg, cfg.arabicAyahNumbers)} ${a.arabic}`).join(" ");
+      const text2 = arabic.map((a) => mergeAyah(a.arabic, formatAyahNumber(a.reference.startAyah, cfg, cfg.arabicAyahNumbers))).join(" ");
       lines.push(wrapLine(`${cfg.quranAyahOpen}${text2}${cfg.quranAyahClose}`, linePrefix, cfg.lineSuffix));
     }
     if (english.length) {
       if (arabic.length) lines.push(separator);
-      const text2 = english.map((a) => `${formatAyahNumber(a.reference.startAyah, cfg, false)} ${quranTranslationText(a, Boolean(options.quranFootnotes), footnoteOutput.byAyah.get(a.reference.startAyah))}`).join(" ");
+      const text2 = english.map((a) => mergeAyah(quranTranslationText(a, Boolean(options.quranFootnotes), footnoteOutput.byAyah.get(a.reference.startAyah)), formatAyahNumber(a.reference.startAyah, cfg, false))).join(" ");
       lines.push(wrapLine(`${cfg.quranAyahOpen}${text2}${cfg.quranAyahClose}`, linePrefix, cfg.lineSuffix));
     }
   } else if (result.reference.startAyah !== result.reference.endAyah && mode === "alternate") {
@@ -385,10 +389,10 @@ function formatHadith(result, cfg, options) {
   if (options.grading) {
     if (lines.length) lines.push(separator);
     if (!result.grades.length) pushWrapped("Grading: Not found");
-    else if (result.grades.length === 1) pushWrapped(`Grading: ${gradeDisplay(result.grades[0])}`);
+    else if (result.grades.length === 1) pushWrapped(`Grading: ${gradeDisplay(result.grades[0], cfg.traditionalHadithTerms)}`);
     else {
       pushWrapped("- Grading:");
-      for (const grade of result.grades) lines.push(`${linePrefix}  - ${gradeDisplay(grade)}${cfg.lineSuffix}`);
+      for (const grade of result.grades) lines.push(`${linePrefix}  - ${gradeDisplay(grade, cfg.traditionalHadithTerms)}${cfg.lineSuffix}`);
     }
   }
   return `${cfg.entirePrefix}${prefixCallout(cfg)}${link}${lines.length ? `
@@ -623,6 +627,16 @@ function transformFetchedEnglishText(text2, options) {
   out = options.raNormalization ? normalizeStandaloneRa(out) : out;
   return modifyCodeSyntax(out, options.codeSyntaxMode);
 }
+function transformFetchedHadithGrade(grade, options) {
+  return {
+    ...grade,
+    text: transformFetchedEnglishText(grade.text, options),
+    ...grade.author === void 0 ? {} : { author: transformFetchedEnglishText(grade.author, options) }
+  };
+}
+function transformFetchedHadithGrades(grades, options) {
+  return grades.map((grade) => transformFetchedHadithGrade(grade, options));
+}
 function transformFetchedArabicText(text2, options) {
   if (!options.textConversionsEnabled || !options.blessingNormalization) return text2;
   return normalizeArabicBlessing(text2);
@@ -649,8 +663,105 @@ function makeQuranUrl(website, template, surah, ayah, ayahLast, translationId = 
   if (invalid.length) throw new Error(`Unknown URL placeholders: ${invalid.join(", ")}`);
   return raw.replaceAll("$surah", encodeURIComponent(String(surah))).replaceAll("$ayahlast", encodeURIComponent(String(ayahLast))).replaceAll("$ayah", encodeURIComponent(String(ayah)));
 }
+var HADITH_SLUGS = { abudawud: "abudawud", ibnmajah: "ibnmajah", nasai: "nasai", tirmidhi: "tirmidhi", bukhari: "bukhari", muslim: "muslim", malik: "malik" };
+function hadithLinkDestinationForReference(configured, providerId, collectionId, isInBookReference) {
+  if (providerId !== "hadith-api" && providerId !== "hadith-json") return void 0;
+  if (configured !== "provider") return configured;
+  return collectionId.toLowerCase() === "muslim" && !isInBookReference ? "sunnah" : void 0;
+}
+function buildHadithSourceUrl(destination, collectionId, canonicalReference) {
+  if (destination === "provider") return void 0;
+  const slug = HADITH_SLUGS[collectionId.toLowerCase()];
+  if (!slug) return void 0;
+  const base = destination === "sunnah" ? "https://sunnah.com" : "https://hadithhub.com";
+  return `${base}/${slug}:${encodeURIComponent(String(canonicalReference))}`;
+}
+
+// src/core/hadith-references.ts
+function missing(error) {
+  return error instanceof AppError && (error.kind === "parse" || error.kind === "http" && error.status === 404);
+}
+function notFoundMessage(reference) {
+  const label = `${reference.collectionId} ${reference.hadithNumber}`;
+  if (reference.collectionId.toLowerCase() === "muslim") {
+    return `Hadith ${label} was not found. The selected Hadith provider may not have this Hadith. Check the reference system: use canonical references such as 204a, or enable Use in-book reference only for a provider's internal number.`;
+  }
+  return `Hadith ${label} was not found. The selected Hadith provider may not have this Hadith. Check the selected collection, provider, and reference number.`;
+}
+async function fetchOne(provider, reference, translation, ctx) {
+  try {
+    return await provider.fetchHadith(reference, translation, ctx);
+  } catch (error) {
+    if (missing(error)) throw new AppError(notFoundMessage(reference), "parse", error instanceof AppError ? error.status : void 0, { cause: error });
+    throw error;
+  }
+}
+function numbers(reference) {
+  const end = reference.endHadithNumber ?? reference.hadithNumber;
+  if (typeof reference.hadithNumber !== "number" || typeof end !== "number") return [{ ...reference, endHadithNumber: void 0 }];
+  const start = reference.hadithNumber;
+  return Array.from(
+    { length: end - start + 1 },
+    (_, offset) => ({ kind: "hadith", collectionId: reference.collectionId, hadithNumber: start + offset, ...reference.referenceSystem ? { referenceSystem: reference.referenceSystem } : {} })
+  );
+}
+async function fetchHadithReferences(provider, references, translation, ctx, maximum) {
+  const expanded = references.flatMap(numbers);
+  if (expanded.length > maximum) throw new AppError(`Hadith fetch limit is ${maximum} hadiths.`, "validation");
+  const results = [];
+  for (const reference of expanded) {
+    const isMuslim = reference.collectionId.toLowerCase() === "muslim";
+    const explicit = typeof reference.hadithNumber === "string" && /[a-z]$/iu.test(reference.hadithNumber);
+    if (!isMuslim || explicit || reference.referenceSystem === "provider") {
+      results.push(await fetchOne(provider, reference, translation, ctx));
+      continue;
+    }
+    const base = String(reference.hadithNumber);
+    const lettered = [];
+    const seenContent = /* @__PURE__ */ new Set();
+    for (let code = 97; code <= 122; code++) {
+      try {
+        const result = await provider.fetchHadith({ ...reference, hadithNumber: `${base}${String.fromCharCode(code)}` }, translation, ctx);
+        const identity = `${result.arabic ?? ""}\0${result.english ?? ""}`;
+        if (seenContent.has(identity)) break;
+        seenContent.add(identity);
+        lettered.push(result);
+      } catch (error) {
+        if (missing(error)) break;
+        throw error;
+      }
+    }
+    if (lettered.length) {
+      results.push(...lettered);
+    } else {
+      try {
+        results.push(await provider.fetchHadith(reference, translation, ctx));
+      } catch (error) {
+        if (missing(error)) throw new AppError(notFoundMessage(reference), "parse", error instanceof AppError ? error.status : void 0, { cause: error });
+        throw error;
+      }
+    }
+    if (results.length > maximum) throw new AppError(`Hadith fetch limit is ${maximum} hadiths.`, "validation");
+  }
+  return results;
+}
 
 // src/parsing/references.ts
+function parseHadithReferences(input) {
+  const value = normalizeInput(input);
+  const colon = value.indexOf(":");
+  if (colon <= 0) return null;
+  const collection = value.slice(0, colon).trim();
+  const values = value.slice(colon + 1).split(",");
+  if (!collection || !values.length || values.some((value2) => !value2.trim())) return null;
+  const references = [];
+  for (const value2 of values) {
+    const parsed = parseHadithReference(`${collection}:${value2.trim()}`);
+    if (!parsed) return null;
+    references.push(parsed);
+  }
+  return references;
+}
 var HADITH_ALIASES = {
   bukhari: "bukhari",
   "sahih al-bukhari": "bukhari",
@@ -883,8 +994,56 @@ var HADITH_ALIASES2 = {
   qudsi: "qudsi40",
   dehlawi: "shahwaliullah40"
 };
+var HADITH_COLLECTION_ORDER = {
+  bukhari: 1,
+  muslim: 2,
+  nasai: 3,
+  abudawud: 4,
+  tirmidhi: 5,
+  ibnmajah: 6,
+  malik: 7,
+  ahmad: 8,
+  darimi: 9,
+  nawawi40: 10,
+  qudsi40: 11,
+  shahwaliullah40: 12,
+  riyadussalihin: 13,
+  mishkat_almasabih: 14,
+  aladab_almufrad: 15,
+  shamail_muhammadiyah: 16,
+  bulugh_almaram: 17,
+  ibnrajab50: 18,
+  "lulu-marjan": 19,
+  hakim: 20,
+  ibnhibban: 21,
+  ibnkhuzaymah: 22,
+  bazzar: 23,
+  daraqutni: 24,
+  abdalrazzaq: 25,
+  ibnabishaybah: 26,
+  "nasai-kubra": 27,
+  bayhaqi: 28,
+  tayalisi: 29,
+  abuyaala: 30,
+  matalib: 31,
+  "tabarani-saghir": 32,
+  "tabarani-awsat": 33,
+  tabarani: 34,
+  suyuti: 35
+};
+function canonicalHadithCollectionId(id) {
+  return HADITH_ALIASES2[id] ?? id;
+}
+function hadithCollectionOrder(id) {
+  return HADITH_COLLECTION_ORDER[canonicalHadithCollectionId(id)] ?? 99;
+}
+function formatHadithCollectionLabel(collection) {
+  const normalized = normalizeHadithCollectionMetadata(collection);
+  const number = String(hadithCollectionOrder(collection.id)).padStart(2, "0");
+  return `${number} ${normalized.name}`;
+}
 function normalizeHadithCollectionMetadata(collection) {
-  const canonicalId = HADITH_ALIASES2[collection.id] ?? collection.id;
+  const canonicalId = canonicalHadithCollectionId(collection.id);
   const canonical = HADITH_CANONICAL[canonicalId];
   if (!canonical) return { ...collection };
   return { ...collection, name: canonical.name, author: canonical.author };
@@ -1130,8 +1289,8 @@ function parseQuranUnlockedResponse(raw, reference, translation) {
 }
 
 // src/core/fetch.ts
-function contiguousRanges(numbers) {
-  const sorted = [...new Set(numbers)].sort((a, b) => a - b);
+function contiguousRanges(numbers2) {
+  const sorted = [...new Set(numbers2)].sort((a, b) => a - b);
   if (!sorted.length) return [];
   const ranges = [];
   let start = sorted[0];
@@ -1331,15 +1490,15 @@ var QuranUnlockedProvider = class {
   }
   async fetchQuran(reference, translation, ctx) {
     if (translation.providerId !== this.metadata.id) throw new AppError("Translation belongs to a different provider.", "validation");
-    const numbers = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, i) => reference.startAyah + i);
+    const numbers2 = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, i) => reference.startAyah + i);
     const cached = /* @__PURE__ */ new Map();
     if (this.cacheEnabled()) {
-      const entries = await Promise.all(numbers.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
+      const entries = await Promise.all(numbers2.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
       for (const { number, entry } of entries) if (entry?.value) cached.set(number, structuredClone(entry.value));
     }
-    const missing = numbers.filter((number) => !cached.has(number));
-    if (missing.length) {
-      const ranges = contiguousRanges(missing);
+    const missing2 = numbers2.filter((number) => !cached.has(number));
+    if (missing2.length) {
+      const ranges = contiguousRanges(missing2);
       const fetched = await mapWithConcurrency(ranges, 4, (range) => this.fetchRange(reference.surah, range.start, range.end, translation, ctx));
       for (const result of fetched) {
         for (const ayah of result.ayahs) {
@@ -1349,8 +1508,8 @@ var QuranUnlockedProvider = class {
         }
       }
     }
-    const ayahs = numbers.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
-    if (ayahs.length !== numbers.length) throw new AppError("No Quran text was found for the selected reference.", "parse");
+    const ayahs = numbers2.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
+    if (ayahs.length !== numbers2.length) throw new AppError("No Quran text was found for the selected reference.", "parse");
     const first = cached.get(reference.startAyah);
     return { kind: "quran", reference, surahName: first?.surahName ?? `Surah ${reference.surah}`, ayahs, source: { providerId: this.metadata.id, providerName: this.metadata.name, sourceUrl: this.makeSourceUrl(reference, translation.id), retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), translationId: translation.id, translationName: translation.name } };
   }
@@ -1500,30 +1659,30 @@ var AlQuranCloudProvider = class {
   }
   async fetchQuran(reference, translation, ctx) {
     if (translation.providerId !== this.metadata.id) throw new AppError("Translation belongs to a different provider.", "validation");
-    const numbers = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, index) => reference.startAyah + index);
+    const numbers2 = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, index) => reference.startAyah + index);
     const cached = /* @__PURE__ */ new Map();
     if (this.cacheEnabled()) {
-      const entries = await Promise.all(numbers.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
+      const entries = await Promise.all(numbers2.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
       for (const { number, entry } of entries) if (entry?.value) cached.set(number, structuredClone(entry.value));
     }
-    const missing = numbers.filter((number) => !this.hasComplete(cached.get(number)?.ayah));
-    if (missing.length) {
-      if (shouldFetchWholeQuranSurah(reference, missing.length, 2, 2, 4)) {
+    const missing2 = numbers2.filter((number) => !this.hasComplete(cached.get(number)?.ayah));
+    if (missing2.length) {
+      if (shouldFetchWholeQuranSurah(reference, missing2.length, 2, 2, 4)) {
         const [arabicRaw, translationRaw] = await Promise.all([
           this.loadSurah(reference.surah, ARABIC_EDITION, ctx),
           this.loadSurah(reference.surah, translation.id, ctx)
         ]);
         this.seedFromSurahs(reference.surah, reference, translation, arabicRaw, translationRaw, cached);
       } else {
-        const fetched = await mapWithConcurrency(missing, 4, (number) => this.fetchAyah(reference.surah, number, translation, ctx));
+        const fetched = await mapWithConcurrency(missing2, 4, (number) => this.fetchAyah(reference.surah, number, translation, ctx));
         for (const value of fetched) cached.set(value.ayah.reference.startAyah, value);
         if (this.cacheEnabled()) {
           for (const value of fetched) await setCacheBestEffort(this.cache, { version: 1, key: this.cacheKey(reference.surah, value.ayah.reference.startAyah, translation.id), storedAt: Date.now(), value });
         }
       }
     }
-    const ayahs = numbers.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
-    if (ayahs.length !== numbers.length || !ayahs.some((ayah) => ayah.arabic || ayah.translation)) throw new AppError("No Quran text was found for the selected reference.", "parse");
+    const ayahs = numbers2.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
+    if (ayahs.length !== numbers2.length || !ayahs.some((ayah) => ayah.arabic || ayah.translation)) throw new AppError("No Quran text was found for the selected reference.", "parse");
     const first = cached.get(reference.startAyah);
     return {
       kind: "quran",
@@ -1586,8 +1745,8 @@ var AlQuranCloudProvider = class {
     const arabicMap = new Map((arabic?.ayahs ?? []).map((item) => [item.numberInSurah ?? -1, item.text ?? ""]));
     const translationMap = new Map((translated?.ayahs ?? []).map((item) => [item.numberInSurah ?? -1, item.text ?? ""]));
     const surahName = str(translated?.englishName) ?? str(arabic?.englishName) ?? `Surah ${surah}`;
-    const numbers = /* @__PURE__ */ new Set([...arabicMap.keys(), ...translationMap.keys()]);
-    for (const number of numbers) {
+    const numbers2 = /* @__PURE__ */ new Set([...arabicMap.keys(), ...translationMap.keys()]);
+    for (const number of numbers2) {
       if (number < 1) continue;
       const arabicText = str(arabicMap.get(number));
       const translatedText = str(translationMap.get(number));
@@ -1596,7 +1755,7 @@ var AlQuranCloudProvider = class {
       cached.set(number, value);
       if (this.cacheEnabled()) void setCacheBestEffort(this.cache, { version: 1, key: this.cacheKey(surah, number, translation.id), storedAt: Date.now(), value });
     }
-    if (!numbers.size && reference.startAyah <= reference.endAyah) throw new AppError("No Quran text was found for the selected reference.", "parse");
+    if (!numbers2.size && reference.startAyah <= reference.endAyah) throw new AppError("No Quran text was found for the selected reference.", "parse");
   }
   async healthCheck(ctx) {
     const started = performance.now();
@@ -1661,8 +1820,8 @@ function itemMatchesReference(item, reference) {
   const source = isRecord2(item.source) ? item.source : void 0;
   const refs = [item.ref, source?.ref];
   if (refs.some((value) => referenceKey(value) === expectedRef)) return true;
-  const numbers = [item.number, item.num];
-  return numbers.some((value) => referenceKey(value) === target);
+  const numbers2 = [item.number, item.num];
+  return numbers2.some((value) => referenceKey(value) === target);
 }
 function bookEntries(raw) {
   if (!isRecord2(raw) || !Array.isArray(raw.chapters)) return void 0;
@@ -1696,6 +1855,13 @@ function pickItem(raw, reference) {
   }
   const candidates = apiCandidates(raw);
   return candidates.find((item) => itemMatchesReference(item, reference)) ?? candidates[0];
+}
+function resolvedReference(item, requested) {
+  const direct = referenceKey(item.ref);
+  const expectedPrefix = `${requested.collectionId.toLowerCase()}:`;
+  const value = direct?.startsWith(expectedPrefix) ? direct.slice(expectedPrefix.length) : referenceKey(item.num) ?? referenceKey(item.number);
+  if (!value || !/^\d{1,6}[a-z]?$/iu.test(value)) return requested;
+  return { ...requested, hadithNumber: /^\d+$/u.test(value) ? Number(value) : value.toLowerCase() };
 }
 function gradeTextAndGrader(raw, item) {
   const obj = isRecord2(raw) ? raw : void 0;
@@ -1734,7 +1900,7 @@ function parseHadithUnlockedResponse(raw, reference, collection, sourceUrl) {
   const item = pickItem(raw, reference);
   const collectionName = decodeEntities(collection.name);
   if (!item) return { kind: "hadith", reference, collectionName, grades: [], source: { providerId: collection.providerId, providerName: "Hadith Unlocked", sourceUrl, retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), collectionId: collection.id, collectionName } };
-  const result = { kind: "hadith", reference, collectionName, grades: gradeFromItem(item), source: { providerId: collection.providerId, providerName: "Hadith Unlocked", sourceUrl, retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), collectionId: collection.id, collectionName } };
+  const result = { kind: "hadith", reference: resolvedReference(item, reference), collectionName, grades: gradeFromItem(item), source: { providerId: collection.providerId, providerName: "Hadith Unlocked", sourceUrl, retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), collectionId: collection.id, collectionName } };
   const text2 = (value) => value ? decodeEntities(value) : void 0;
   const arabic = text2(str2(item.body) ?? str2(item.body_ar) ?? str2(item.text_arabic) ?? str2(item.full_arabic) ?? nestedText(item.text, ["ar", "arabic"]));
   const english = text2(str2(item.body_en) ?? str2(item.text_english) ?? str2(item.full_english) ?? nestedText(item.text, ["en", "english"]));
@@ -1872,6 +2038,7 @@ var HadithUnlockedProvider = class {
       }
       const raw = (await this.http.getJson(`${pageUrl}?json`, ctx.signal)).json;
       const result = parseHadithUnlockedResponse(raw, reference, collection, pageUrl);
+      if (!result.arabic && !result.english) throw new AppError(`Hadith ${reference.hadithNumber} was not found in ${collection.name}.`, "parse");
       if (this.cacheEnabled()) await setCacheBestEffort(this.cache, { version: 1, key, storedAt: Date.now(), value: result });
       return result;
     });
@@ -1924,6 +2091,12 @@ function str3(value) {
 function isRecord3(value) {
   return typeof value === "object" && value !== null;
 }
+function splitEnglishIsnad(text2) {
+  if (!text2) return {};
+  const match = /^([^:\r\n]*:)(?:(?:[ \t]*\r?\n[ \t]*)|(?=\S))([\s\S]+)$/u.exec(text2);
+  if (!match) return { text: text2 };
+  return { isnad: match[1].trim(), text: match[2].trim() || void 0 };
+}
 function normalizeGrades(value) {
   if (!Array.isArray(value)) return [];
   return value.flatMap((g) => {
@@ -1947,14 +2120,16 @@ function gradesFromHadith(...hadiths) {
   }
   return out;
 }
-function parseHadithApiResponse(arabicRaw, englishRaw, reference, collectionName, providerId, translation) {
-  const arHadith = selectHadith(arabicRaw, reference.hadithNumber);
-  const enHadith = selectHadith(englishRaw, reference.hadithNumber);
+function parseHadithApiResponse(arabicRaw, englishRaw, reference, collectionName, providerId, translation, providerNumber = reference.hadithNumber) {
+  const arHadith = selectHadith(arabicRaw, providerNumber);
+  const enHadith = selectHadith(englishRaw, providerNumber);
   const ar = arHadith?.text;
   const grades = gradesFromHadith(enHadith, arHadith);
   const result = { kind: "hadith", reference, collectionName, grades, source: { providerId, providerName: providerId, sourceUrl: `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${translation?.id ?? "eng"}-${reference.collectionId}/${reference.hadithNumber}.min.json`, retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), collectionId: reference.collectionId, collectionName } };
   if (ar) result.arabic = ar;
-  if (enHadith?.text) result.english = enHadith.text;
+  const english = splitEnglishIsnad(enHadith?.text);
+  if (english.isnad) result.englishIsnad = english.isnad;
+  if (english.text) result.english = english.text;
   return result;
 }
 function selectHadith(raw, no) {
@@ -1997,6 +2172,7 @@ var HadithApiProvider = class {
     __publicField(this, "hadithLoads", new SingleFlight());
     __publicField(this, "collectionsCache", null);
     __publicField(this, "translationsCache", null);
+    __publicField(this, "muslimReferenceIndex", null);
   }
   async listCollections(ctx) {
     if (this.collectionsCache) return this.collectionsCache.map((x) => ({ ...x }));
@@ -2072,7 +2248,7 @@ var HadithApiProvider = class {
   }
   async fetchHadith(reference, translation, ctx) {
     if (translation.providerId !== this.metadata.id) throw new AppError("Translation belongs to a different provider.", "validation");
-    const key = makeCacheKey({ provider: this.metadata.id, collection: reference.collectionId, hadith: reference.hadithNumber, translation: translation.id });
+    const key = makeCacheKey({ provider: this.metadata.id, collection: reference.collectionId, hadith: reference.hadithNumber, referenceSystem: reference.referenceSystem ?? "canonical", translation: translation.id });
     return this.hadithLoads.run(key, async () => this.fetchHadithCore(reference, translation, ctx, key));
   }
   async fetchHadithCore(reference, translation, ctx, key) {
@@ -2099,17 +2275,64 @@ var HadithApiProvider = class {
       collection = collections.find((x) => x.id === reference.collectionId);
     }
     if (!collection) throw new AppError("Unknown collection.", "validation");
+    const providerNumber = reference.collectionId === "muslim" && reference.referenceSystem !== "provider" ? await this.resolveMuslimProviderNumber(String(reference.hadithNumber), ctx.signal, en?.json) : reference.hadithNumber;
     const arabicEdition = collection.arabicEdition;
     const englishEdition = `${translation.id}-${reference.collectionId}`;
     if (!ar || !en) {
       [ar, en] = await Promise.all([
-        arabicEdition ? this.getEditionHadith(arabicEdition, reference.hadithNumber, ctx.signal) : Promise.resolve(null),
-        englishEdition ? this.getEditionHadith(englishEdition, reference.hadithNumber, ctx.signal) : Promise.resolve(null)
+        arabicEdition ? this.getEditionHadith(arabicEdition, providerNumber, ctx.signal) : Promise.resolve(null),
+        englishEdition ? this.getEditionHadith(englishEdition, providerNumber, ctx.signal) : Promise.resolve(null)
       ]);
     }
-    const result = parseHadithApiResponse(ar?.json, en?.json, reference, collection.name, this.metadata.id, translation);
+    const result = parseHadithApiResponse(ar?.json, en?.json, reference, collection.name, this.metadata.id, translation, providerNumber);
+    if (!result.arabic && !result.english) throw new AppError(`Hadith ${reference.hadithNumber} was not found in ${collection.name}.`, "parse");
     if (this.cacheEnabled()) await setCacheBestEffort(this.cache, { version: 1, key, storedAt: Date.now(), value: result });
     return result;
+  }
+  async resolveMuslimProviderNumber(canonical, signal, offlineEnglish) {
+    const key = canonical.trim().toLowerCase();
+    if (!this.muslimReferenceIndex) this.muslimReferenceIndex = this.createMuslimReferenceIndex(signal, offlineEnglish);
+    const index = await this.muslimReferenceIndex;
+    const id = index.get(key);
+    if (id === void 0) throw new AppError(`Canonical Sahih Muslim reference ${canonical} was not found.`, "parse");
+    return id;
+  }
+  async createMuslimReferenceIndex(signal, offlineEnglish) {
+    const raw = offlineEnglish ?? await this.getMuslimReferenceEdition(signal);
+    const root = raw && typeof raw === "object" ? raw : {};
+    const index = /* @__PURE__ */ new Map();
+    for (const value of root.hadiths ?? []) {
+      if (!value || typeof value !== "object") continue;
+      const item = value;
+      if (typeof item.hadithnumber !== "number" || typeof item.arabicnumber !== "string") continue;
+      const match = /^(\d+)(?:\.(\d+))?$/u.exec(item.arabicnumber.trim());
+      if (!match) continue;
+      const suffix = match[2] ? String.fromCharCode(96 + Number(match[2])) : "";
+      if (suffix && (suffix < "a" || suffix > "z")) continue;
+      index.set(`${match[1]}${suffix}`, item.hadithnumber);
+    }
+    return index;
+  }
+  /** The full Muslim edition is needed only to reconcile canonical references.
+   * Some CDN edges reject this large JSON file with 403, so use the same public
+   * repository mirror as the targeted-fetch fallback instead of treating that as
+   * a missing Hadith. */
+  async getMuslimReferenceEdition(signal) {
+    const urls = [
+      `${BASE}/editions/eng-muslim.min.json`,
+      `https://raw.githubusercontent.com/fawazahmed0/hadith-api/1/editions/eng-muslim.min.json`
+    ];
+    let lastError;
+    for (const url of urls) {
+      try {
+        return (await this.http.getJson(url, signal)).json;
+      } catch (error) {
+        lastError = error;
+        if (signal.aborted) throw error;
+        if (error instanceof AppError && error.kind === "http" && ![403, 404, 500, 502, 503].includes(error.status ?? 0)) throw error;
+      }
+    }
+    throw lastError instanceof Error ? lastError : new AppError("Could not load Sahih Muslim reference metadata.", "network");
   }
   async fetchHadithRange(reference, translation, ctx) {
     const end = reference.endHadithNumber ?? reference.hadithNumber;
@@ -2121,7 +2344,7 @@ var HadithApiProvider = class {
     const concurrency = 4;
     for (let start = reference.hadithNumber; start <= end; start += concurrency) {
       const batch = Array.from({ length: Math.min(concurrency, end - start + 1) }, (_, index) => start + index);
-      const batchResults = await Promise.all(batch.map((hadithNumber) => this.fetchHadith({ kind: "hadith", collectionId: reference.collectionId, hadithNumber }, translation, ctx)));
+      const batchResults = await Promise.all(batch.map((hadithNumber) => this.fetchHadith({ kind: "hadith", collectionId: reference.collectionId, hadithNumber, ...reference.referenceSystem ? { referenceSystem: reference.referenceSystem } : {} }, translation, ctx)));
       results.push(...batchResults);
     }
     return results;
@@ -2314,7 +2537,7 @@ var QuranApiProvider = class {
   }
   async fetchQuran(reference, translation, ctx) {
     if (translation.providerId !== this.metadata.id) throw new AppError("Translation belongs to a different provider.", "validation");
-    const numbers = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, i) => reference.startAyah + i);
+    const numbers2 = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, i) => reference.startAyah + i);
     const cached = /* @__PURE__ */ new Map();
     const [offlineArabic, offlineTranslation] = await Promise.all([
       this.offline?.getJson("quran-api:arabic", "arabic"),
@@ -2322,20 +2545,20 @@ var QuranApiProvider = class {
     ]);
     const arabicOffline = offlineArabic !== null && offlineArabic !== void 0 ? parseQuranApiEdition(offlineArabic, reference) : null;
     const translationOffline = offlineTranslation !== null && offlineTranslation !== void 0 ? parseQuranApiEdition(offlineTranslation, reference) : null;
-    for (const number of numbers) {
+    for (const number of numbers2) {
       const arabic = arabicOffline?.verses.get(number);
       const text2 = translationOffline?.verses.get(number);
       if (arabic || text2) cached.set(number, this.makeCachedAyah(reference, number, translation, arabic, text2, arabicOffline?.surahName));
     }
-    const missing = numbers.filter((number) => {
+    const missing2 = numbers2.filter((number) => {
       const ayah = cached.get(number)?.ayah;
       return !ayah?.arabic || !ayah.translation;
     });
-    if (missing.length && this.cacheEnabled()) {
-      const entries = await Promise.all(missing.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
+    if (missing2.length && this.cacheEnabled()) {
+      const entries = await Promise.all(missing2.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
       for (const { number, entry } of entries) if (entry?.value) cached.set(number, mergeCached(cached.get(number), entry.value));
     }
-    const stillMissing = numbers.filter((number) => {
+    const stillMissing = numbers2.filter((number) => {
       const ayah = cached.get(number)?.ayah;
       return !ayah?.arabic || !ayah.translation;
     });
@@ -2362,8 +2585,8 @@ var QuranApiProvider = class {
         if (this.cacheEnabled()) await setCacheBestEffort(this.cache, { version: 1, key: this.cacheKey(reference.surah, number, translation.id), storedAt: Date.now(), value: merged });
       }
     }
-    const ayahs = numbers.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
-    if (ayahs.length !== numbers.length || !ayahs.some((a) => a.arabic || a.translation)) throw new AppError("No Quran text was found for the selected reference.", "parse");
+    const ayahs = numbers2.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
+    if (ayahs.length !== numbers2.length || !ayahs.some((a) => a.arabic || a.translation)) throw new AppError("No Quran text was found for the selected reference.", "parse");
     const first = cached.get(reference.startAyah);
     return { kind: "quran", reference, surahName: first?.surahName ?? arabicOffline?.surahName ?? `Surah ${reference.surah}`, ayahs, source: { providerId: this.metadata.id, providerName: this.metadata.name, sourceUrl: this.makeSourceUrl(reference, translation.id), retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), translationId: translation.id, translationName: translation.name } };
   }
@@ -2467,7 +2690,7 @@ var QuranProjectProvider = class {
   }
   async fetchQuran(reference, translation, ctx) {
     if (translation.providerId !== this.metadata.id || !TRANSLATIONS2.some((item) => item.id === translation.id)) throw new AppError("Translation belongs to a different provider.", "validation");
-    const numbers = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, index) => reference.startAyah + index);
+    const numbers2 = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, index) => reference.startAyah + index);
     const cached = /* @__PURE__ */ new Map();
     const offlineRaw = await this.offline?.getJson("quran-project:complete", String(reference.surah));
     if (offlineRaw !== null && offlineRaw !== void 0) {
@@ -2476,24 +2699,24 @@ var QuranProjectProvider = class {
       return this.buildResult(reference, translation, cached, "offline");
     }
     if (this.cacheEnabled()) {
-      const entries = await Promise.all(numbers.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
+      const entries = await Promise.all(numbers2.map(async (number) => ({ number, entry: await this.cache.get(this.cacheKey(reference.surah, number, translation.id)) })));
       for (const { number, entry } of entries) if (entry?.value) cached.set(number, structuredClone(entry.value));
     }
-    const missing = numbers.filter((number) => !this.hasComplete(cached.get(number)?.ayah));
-    if (missing.length && shouldFetchWholeQuranSurah(reference, missing.length, 1, 1, 3)) {
+    const missing2 = numbers2.filter((number) => !this.hasComplete(cached.get(number)?.ayah));
+    if (missing2.length && shouldFetchWholeQuranSurah(reference, missing2.length, 1, 1, 3)) {
       const parsed = await this.loadChapter(reference.surah, ctx, reference);
       this.seedChapter(parsed, reference, translation, cached);
-    } else if (missing.length) {
-      const fetched = await mapWithConcurrency(missing, 4, (number) => this.fetchVerse(reference.surah, number, translation, ctx));
+    } else if (missing2.length) {
+      const fetched = await mapWithConcurrency(missing2, 4, (number) => this.fetchVerse(reference.surah, number, translation, ctx));
       for (const value of fetched) cached.set(value.ayah.reference.startAyah, value);
       if (this.cacheEnabled()) for (const value of fetched) await setCacheBestEffort(this.cache, { version: 1, key: this.cacheKey(reference.surah, value.ayah.reference.startAyah, translation.id), storedAt: Date.now(), value });
     }
     return this.buildResult(reference, translation, cached, "online");
   }
   buildResult(reference, translation, cached, sourceMode) {
-    const numbers = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, index) => reference.startAyah + index);
-    const ayahs = numbers.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
-    if (ayahs.length !== numbers.length) throw new AppError("No Quran text was found for the selected reference.", "parse");
+    const numbers2 = Array.from({ length: reference.endAyah - reference.startAyah + 1 }, (_, index) => reference.startAyah + index);
+    const ayahs = numbers2.map((number) => cached.get(number)?.ayah).filter((ayah) => Boolean(ayah));
+    if (ayahs.length !== numbers2.length) throw new AppError("No Quran text was found for the selected reference.", "parse");
     const first = cached.get(reference.startAyah);
     const sourceUrl = sourceMode === "offline" ? `${BASE3}/${reference.surah}.json` : reference.startAyah === reference.endAyah ? `${BASE3}/${reference.surah}/${reference.startAyah}.json` : `${BASE3}/${reference.surah}.json`;
     return { kind: "quran", reference, surahName: first?.surahName ?? `Surah ${reference.surah}`, ayahs, source: { providerId: this.metadata.id, providerName: this.metadata.name, sourceUrl, retrievedAt: (/* @__PURE__ */ new Date()).toISOString(), translationId: translation.id, translationName: translation.name } };
@@ -2547,6 +2770,7 @@ var QuranProjectProvider = class {
 // src/providers/hadith-json/provider.ts
 var BASE4 = "https://raw.githubusercontent.com/AhmedBaset/hadith-json/v1.2.0";
 var DATASET_VERSION = "v1.2.0";
+var HADITH_API_MUSLIM_EDITION = "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim.min.json";
 var TRANSLATION = { id: "en", language: "en", name: "English", providerId: "hadith-json" };
 var COLLECTIONS = [
   { id: "bukhari", name: "Sahih Al-Bukhari", providerId: "hadith-json", author: "Imam Muhammad Ibn Ismail Al-Bukhari" },
@@ -2622,6 +2846,7 @@ var HadithJsonProvider = class {
     __publicField(this, "bookIndexCache", /* @__PURE__ */ new Map());
     __publicField(this, "maxMemoryBooks", 3);
     __publicField(this, "bookLoads", /* @__PURE__ */ new Map());
+    __publicField(this, "muslimCanonicalIndex", null);
   }
   async listCollections(_ctx) {
     return COLLECTIONS.map((x) => normalizeHadithCollectionMetadata(x));
@@ -2636,7 +2861,8 @@ var HadithJsonProvider = class {
     const collection = this.getCollection(reference.collectionId);
     this.validateTranslation(translation);
     const data = await this.loadBook(collection.id, ctx);
-    return this.parseFromBook(reference, collection, translation, data);
+    const providerNumber = await this.resolveMuslimReference(reference, data, ctx);
+    return this.parseFromBook(reference, collection, translation, data, providerNumber);
   }
   async fetchHadithRange(reference, translation, ctx) {
     const collection = this.getCollection(reference.collectionId);
@@ -2644,13 +2870,18 @@ var HadithJsonProvider = class {
     const end = reference.endHadithNumber ?? reference.hadithNumber;
     if (end === reference.hadithNumber) {
       const data2 = await this.loadBook(collection.id, ctx);
-      return [this.parseFromBook(reference, collection, translation, data2)];
+      const providerNumber = await this.resolveMuslimReference(reference, data2, ctx);
+      return [this.parseFromBook(reference, collection, translation, data2, providerNumber)];
     }
     if (typeof reference.hadithNumber !== "number" || typeof end !== "number") throw new AppError("Alphabetic Hadith ranges are not supported.", "validation");
     if (end < reference.hadithNumber) throw new AppError("Hadith range end must not be before its start.", "validation");
     const data = await this.loadBook(collection.id, ctx);
     const results = [];
-    for (let number = reference.hadithNumber; number <= end; number++) results.push(this.parseFromBook({ kind: "hadith", collectionId: collection.id, hadithNumber: number }, collection, translation, data));
+    for (let number = reference.hadithNumber; number <= end; number++) {
+      const item = { kind: "hadith", collectionId: collection.id, hadithNumber: number };
+      const providerNumber = await this.resolveMuslimReference(item, data, ctx);
+      results.push(this.parseFromBook(item, collection, translation, data, providerNumber));
+    }
     return results;
   }
   getCollection(id) {
@@ -2694,7 +2925,7 @@ var HadithJsonProvider = class {
       const positionKey = String(position + 1);
       if (!index.has(positionKey)) index.set(positionKey, value);
       const record2 = asRecord(value);
-      for (const candidate of [record2?.hadithnumber, record2?.hadithNumber, record2?.num, record2?.ref]) {
+      for (const candidate of [record2?.idInBook, record2?.hadithnumber, record2?.hadithNumber, record2?.num, record2?.ref]) {
         if (typeof candidate !== "string" && typeof candidate !== "number") continue;
         const raw = String(candidate).trim();
         if (!raw) continue;
@@ -2708,6 +2939,31 @@ var HadithJsonProvider = class {
       const oldest = this.bookIndexCache.keys().next().value;
       if (oldest === void 0) break;
       this.bookIndexCache.delete(oldest);
+    }
+    return index;
+  }
+  async resolveMuslimReference(reference, data, ctx) {
+    if (reference.collectionId !== "muslim" || reference.referenceSystem === "provider") return reference.hadithNumber;
+    if (!this.muslimCanonicalIndex) this.muslimCanonicalIndex = this.loadMuslimCanonicalIndex(ctx);
+    const canonical = String(reference.hadithNumber).toLowerCase();
+    const providerId = (await this.muslimCanonicalIndex).get(canonical);
+    if (providerId === void 0) throw new AppError(`Canonical Sahih Muslim reference ${reference.hadithNumber} was not found.`, "parse");
+    if (!this.indexBook("muslim", data).has(String(providerId))) throw new AppError(`Hadith JSON has no verified crosswalk for Sahih Muslim ${reference.hadithNumber}.`, "parse");
+    return providerId;
+  }
+  async loadMuslimCanonicalIndex(ctx) {
+    const raw = (await this.http.getJson(HADITH_API_MUSLIM_EDITION, ctx.signal)).json;
+    const hadiths = raw && typeof raw === "object" && Array.isArray(raw.hadiths) ? raw.hadiths : [];
+    const index = /* @__PURE__ */ new Map();
+    for (const value of hadiths) {
+      if (!value || typeof value !== "object") continue;
+      const item = value;
+      if (typeof item.reference?.hadith !== "number" || typeof item.arabicnumber !== "string") continue;
+      const match = /^(\d+)(?:\.(\d+))?$/u.exec(item.arabicnumber.trim());
+      if (!match) continue;
+      const suffix = match[2] ? String.fromCharCode(96 + Number(match[2])) : "";
+      if (suffix && (suffix < "a" || suffix > "z")) continue;
+      index.set(`${match[1]}${suffix}`, item.reference.hadith);
     }
     return index;
   }
@@ -2754,8 +3010,8 @@ var HadithJsonProvider = class {
       if (this.bookLoads.get(collectionId) === load) this.bookLoads.delete(collectionId);
     }
   }
-  parseFromBook(reference, collection, translation, data) {
-    const item = this.indexBook(collection.id, data).get(String(reference.hadithNumber).trim().toLowerCase());
+  parseFromBook(reference, collection, translation, data, providerNumber = reference.hadithNumber) {
+    const item = this.indexBook(collection.id, data).get(String(providerNumber).trim().toLowerCase());
     if (!item) throw new AppError(`Hadith ${reference.hadithNumber} was not found in ${collection.name}.`, "parse");
     const record2 = asRecord(item);
     const english = asRecord(record2?.english);
@@ -3171,6 +3427,7 @@ var COMMAND_DEFINITIONS = [
   { id: "set-quran-website", name: "Set Quran link website", defaultEnabled: false },
   { id: "set-hadith-provider", name: "Set Hadith content provider", defaultEnabled: false },
   { id: "set-hadith-translation", name: "Set Hadith translation", defaultEnabled: false },
+  { id: "set-hadith-website", name: "Set Hadith link website", defaultEnabled: false },
   { id: "manage-offline-databases", name: "Manage offline databases", defaultEnabled: false },
   { id: "check-provider-health", name: "Check provider health", defaultEnabled: true },
   { id: "normalize-salutations", name: "Normalize all salutations to \uFDFA", defaultEnabled: true },
@@ -3227,7 +3484,7 @@ function mergeReplacementRules(raw, legacyRabbConversion) {
   return [...byId.values()];
 }
 var DEFAULT_SETTINGS = {
-  schemaVersion: 14,
+  schemaVersion: 15,
   quranProvider: "alquran-cloud",
   hadithProvider: "hadith-api",
   quranLanguage: "en",
@@ -3235,6 +3492,7 @@ var DEFAULT_SETTINGS = {
   hadithLanguage: "en",
   hadithTranslation: "eng",
   quranWebsite: "quran-unlocked",
+  hadithLinkDestination: "provider",
   customQuranUrl: "https://www.myquranwebsite.com/$surah/$ayah-$ayahlast",
   formatting: { ...DEFAULT_FORMATTING, showLink: true, quranAyahOpen: "{", quranAyahClose: "}", quranAyahStyle: "curly", callout: "quote", customCalloutType: "" },
   replacementRules: DEFAULT_REPLACEMENT_RULES.map((x) => ({ ...x })),
@@ -3254,7 +3512,7 @@ function normalizeOptions(raw, defaults) {
   return {
     ...defaults,
     ...source,
-    quranRangeMode: ["line-by-line", "merged", "alternate", "numbered"].includes(source.quranRangeMode) ? source.quranRangeMode : source.quranMergeAyahs === true ? "merged" : defaults.quranRangeMode,
+    quranRangeMode: ["line-by-line", "merged", "merged-mushaf", "alternate", "numbered"].includes(source.quranRangeMode) ? source.quranRangeMode : source.quranMergeAyahs === true ? "merged" : defaults.quranRangeMode,
     quranFootnotes: source.quranFootnotes === true,
     hadithSeparateIsnad: source.hadithSeparateIsnad !== false
   };
@@ -3299,8 +3557,9 @@ function migrateSettings(raw) {
   return {
     ...structuredClone(DEFAULT_SETTINGS),
     ...source,
-    schemaVersion: 14,
+    schemaVersion: 15,
     quranProvider: legacyProviderDefaults && source.quranProvider === "quran-unlocked" ? "alquran-cloud" : typeof source.quranProvider === "string" && source.quranProvider.trim() ? source.quranProvider : DEFAULT_SETTINGS.quranProvider,
+    hadithLinkDestination: source.hadithLinkDestination === "provider" || source.hadithLinkDestination === "sunnah" || source.hadithLinkDestination === "hadithhub" ? source.hadithLinkDestination : DEFAULT_SETTINGS.hadithLinkDestination,
     replacementRules: mergeReplacementRules(source.replacementRules, _legacyRabbConversion),
     formatting: normalizeFormatting({ ...DEFAULT_FORMATTING, ...source.formatting }),
     quranLanguage: typeof source.quranLanguage === "string" && source.quranLanguage.trim() ? source.quranLanguage : "en",
@@ -3325,7 +3584,7 @@ function decodeHtmlEntities2(value) {
   return value.replace(/&#39;|&#x27;|&apos;/gi, "'").replace(/&quot;|&#x22;/gi, '"').replace(/&amp;/gi, "&").replace(/&lt;/gi, "<").replace(/&gt;/gi, ">").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
 }
 var InputModal = class extends import_obsidian4.Modal {
-  constructor(app, title, placeholder, initial, onSubmit, onCancel, validateInput, inputMode = "numeric", inputType = "text") {
+  constructor(app, title, placeholder, initial, onSubmit, onCancel, validateInput, inputMode = "numeric", inputType = "text", options) {
     super(app);
     this.title = title;
     this.placeholder = placeholder;
@@ -3335,13 +3594,21 @@ var InputModal = class extends import_obsidian4.Modal {
     this.validateInput = validateInput;
     this.inputMode = inputMode;
     this.inputType = inputType;
+    this.options = options;
     __publicField(this, "input");
     __publicField(this, "errorEl");
+    __publicField(this, "useProviderReference", false);
   }
   onOpen() {
     this.contentEl.empty();
     this.titleEl.setText(this.title);
-    new import_obsidian4.Setting(this.contentEl).setName("Reference").addText((t) => {
+    if (this.options?.warning) this.contentEl.createDiv({ text: this.options.warning, cls: "qhf-input-warning mod-warning", attr: { role: "alert" } });
+    if (this.options?.allowProviderReference) new import_obsidian4.Setting(this.contentEl).setName("Use in-book reference").setDesc("Use this provider's internal Sahih Muslim numbering instead of the canonical reference system.").addToggle((t) => t.setValue(false).onChange((v) => {
+      this.useProviderReference = v;
+    }));
+    const referenceSetting = new import_obsidian4.Setting(this.contentEl).setName("Reference");
+    referenceSetting.settingEl.addClass("qhf-reference-input-setting");
+    referenceSetting.addText((t) => {
       this.input = t.inputEl;
       t.setPlaceholder(this.placeholder).setValue(this.initial);
       this.input.type = this.inputType;
@@ -3358,7 +3625,7 @@ var InputModal = class extends import_obsidian4.Modal {
     const submit = row.createEl("button", { text: "Continue", cls: "mod-cta" });
     const submitValue = () => {
       const value = this.input.value.trim();
-      const error = this.validateInput?.(value) ?? null;
+      const error = this.validateInput?.(value, this.useProviderReference) ?? null;
       if (error) {
         this.errorEl.setText(error);
         this.input.addClass("qhf-invalid");
@@ -3370,7 +3637,7 @@ var InputModal = class extends import_obsidian4.Modal {
       this.input.removeAttribute("aria-invalid");
       this.errorEl.empty();
       this.close();
-      void this.onSubmit(value);
+      void this.onSubmit(value, this.useProviderReference);
     };
     submit.onclick = submitValue;
     this.input.addEventListener("keydown", (e) => {
@@ -3460,11 +3727,14 @@ var CollectionModal = class extends import_obsidian4.FuzzySuggestModal {
     this.setPlaceholder("Search collection\u2026");
   }
   getItems() {
-    return this.collections;
+    return [...this.collections].sort((a, b) => {
+      const order = hadithCollectionOrder(a.id) - hadithCollectionOrder(b.id);
+      return order || a.name.localeCompare(b.name);
+    });
   }
   getItemText(item) {
     const normalized = normalizeHadithCollectionMetadata(item);
-    const name = decodeHtmlEntities2(normalized.name);
+    const name = decodeHtmlEntities2(formatHadithCollectionLabel(normalized));
     const author = normalized.author ? formatScholarName(decodeHtmlEntities2(normalized.author)) : "";
     const base = author ? `${name} \u2014 ${author}` : name;
     return this.offlineCollectionIds.has(item.id) ? `${base} \u2B07\uFE0F` : base;
@@ -3504,14 +3774,15 @@ var OptionsModal = class extends import_obsidian4.Modal {
       make("quranFootnotes", "Footnotes", true);
       new import_obsidian4.Setting(this.contentEl).setName("Ayah formatting").setDesc("Choose how a Quran range is arranged.").addDropdown((d) => d.addOptions({
         "line-by-line": "Line by line",
-        "merged": "Merge ayahs",
+        "merged": "Merge Ayahs",
+        "merged-mushaf": "Merge Ayahs (Mushaf-like)",
         "alternate": "Alternate Arabic / English",
         "numbered": "Line by line with numbering"
       }).setValue(opts.quranRangeMode).onChange((v) => {
         opts.quranRangeMode = v;
       }));
     }
-    if (this.capabilities.isnad) make("hadithSeparateIsnad", "Chain of Narration (Isnaad)", true);
+    if (this.capabilities.isnad) make("hadithSeparateIsnad", this.capabilities.traditionalHadithTerms === false ? "Chain of Narration" : "Isnaad", true);
     const row = this.contentEl.createDiv({ cls: "qhf-modal-actions" });
     const cancel = row.createEl("button", { text: "Cancel" });
     cancel.onclick = () => {
@@ -3977,6 +4248,10 @@ var FetcherSettingTab = class extends import_obsidian5.PluginSettingTab {
       this.renderAll();
     }));
     void this.renderHadithTranslationSelector(containerEl, this.plugin.pluginSettings.hadithProvider, token);
+    new import_obsidian5.Setting(containerEl).setName("Hadith link website").setDesc("Keep the original source URL, or use Sunnah.com / Hadith Hub for hadith-api and Hadith JSON. Verify that generated destination links open the intended Hadith. Hadith Unlocked keeps its native links.").addDropdown((dropdown) => dropdown.addOptions({ provider: "Original provider URL", sunnah: "Sunnah.com", hadithhub: "Hadith Hub" }).setValue(this.plugin.pluginSettings.hadithLinkDestination).onChange(async (value) => {
+      this.plugin.pluginSettings.hadithLinkDestination = value;
+      await this.plugin.saveSettings();
+    }));
     new import_obsidian5.Setting(containerEl).setName("Cache fetched content").setDesc("Reuse previously fetched content before making a network request.").addToggle((t) => t.setValue(this.plugin.pluginSettings.cacheEnabled).onChange(async (v) => {
       this.plugin.pluginSettings.cacheEnabled = v;
       await this.plugin.saveSettings();
@@ -4149,6 +4424,10 @@ var FetcherSettingTab = class extends import_obsidian5.PluginSettingTab {
     return translations.map((x) => ({ ...x }));
   }
   renderFormattingSection(containerEl) {
+    new import_obsidian5.Setting(containerEl).setName("Use traditional Hadith terminology").setDesc("Display Sahih, Hasan, and Isnaad instead of Sound, Good, and Chain. Enabled by default.").addToggle((t) => t.setValue(this.plugin.pluginSettings.formatting.traditionalHadithTerms).onChange(async (v) => {
+      this.plugin.pluginSettings.formatting.traditionalHadithTerms = v;
+      await this.plugin.saveSettings();
+    }));
     new import_obsidian5.Setting(containerEl).setName("Use Arabic-Indic ayah numbers").setDesc("Show Quran ayah numbers with Arabic-Indic digits (\u0661\u060C \u0662\u060C \u0663) instead of Western digits (1, 2, 3) in inserted output.").addToggle((t) => t.setValue(this.plugin.pluginSettings.formatting.arabicAyahNumbers).onChange(async (v) => {
       this.plugin.pluginSettings.formatting.arabicAyahNumbers = v;
       await this.plugin.saveSettings();
@@ -4338,7 +4617,7 @@ var FetcherSettingTab = class extends import_obsidian5.PluginSettingTab {
       this.plugin.pluginSettings.raNormalization = v;
       await this.plugin.saveSettings();
     }));
-    new import_obsidian5.Setting(controls).setName("Use standard English transliteration").setDesc("Replace selected transliteration marks with simpler English spellings. Example: Ay\xE2t \u2192 Ayat.").addToggle((t) => t.setValue(this.plugin.pluginSettings.romanEnglish).onChange(async (v) => {
+    new import_obsidian5.Setting(controls).setName("Use standard English transliteration").setDesc("Replace selected transliteration marks with simpler English spellings in fetched text, including Hadith gradings. Example: Ay\xE2t \u2192 Ayat.").addToggle((t) => t.setValue(this.plugin.pluginSettings.romanEnglish).onChange(async (v) => {
       this.plugin.pluginSettings.romanEnglish = v;
       await this.plugin.saveSettings();
     }));
@@ -4474,7 +4753,8 @@ function createNormalizers(pluginSettings) {
   };
   const normalizeEnglish = (text2) => transformFetchedEnglishText(text2, options);
   const normalizeArabic = (text2) => transformFetchedArabicText(text2, options);
-  return { normalizeEnglish, normalizeArabic };
+  const normalizeGrades2 = (grades) => transformFetchedHadithGrades(grades, options);
+  return { normalizeEnglish, normalizeArabic, normalizeGrades: normalizeGrades2 };
 }
 var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
   constructor() {
@@ -4605,6 +4885,8 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
         return this.pickHadithProvider();
       case "set-hadith-translation":
         return this.pickHadithTranslation();
+      case "set-hadith-website":
+        return this.pickHadithWebsite();
       case "manage-offline-databases":
         return this.openOfflineDatabaseManager();
       case "check-provider-health": {
@@ -4714,6 +4996,12 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
     } catch (error) {
       new import_obsidian6.Notice(errorToNotice(error));
     }
+  }
+  async pickHadithWebsite() {
+    new ChoiceModal(this.app, [{ id: "provider", label: "Original provider URL" }, { id: "sunnah", label: "Sunnah.com" }, { id: "hadithhub", label: "Hadith Hub" }], (item) => item.label, async (item) => {
+      this.pluginSettings.hadithLinkDestination = item.id;
+      await this.saveSettings();
+    }, "Select Hadith link website").open();
   }
   async openOfflineDatabaseManager() {
     try {
@@ -4851,12 +5139,12 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
    */
   async insertHadith(editor) {
     const operation = this.operations.begin();
-    const selectedRef = parseHadithReference(editor.getSelection());
-    if (selectedRef) {
+    const selectedRefs = parseHadithReferences(editor.getSelection());
+    if (selectedRefs) {
       const provider2 = this.registry.getHadith(this.pluginSettings.hadithProvider);
       try {
         const collections2 = await provider2.listCollections({ signal: operation.signal });
-        const error = validateHadithReference(selectedRef, collections2, this.pluginSettings.hadithFetchLimit);
+        const error = selectedRefs.map((ref) => validateHadithReference(ref, collections2)).find((value) => value !== null);
         if (error) {
           new import_obsidian6.Notice(`ERROR: ${error}`);
           return;
@@ -4865,7 +5153,7 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
         new import_obsidian6.Notice(errorToNotice(error));
         return;
       }
-      await this.chooseHadithOptions(editor, selectedRef, operation.id, operation.signal);
+      await this.chooseHadithOptions(editor, selectedRefs, operation.id, operation.signal);
       return;
     }
     const provider = this.registry.getHadith(this.pluginSettings.hadithProvider);
@@ -4884,19 +5172,20 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
     }
     new CollectionModal(this.app, collections, (collection) => {
       const isMuslim = collection.id.toLowerCase() === "muslim";
-      const placeholder = isMuslim ? "e.g. 202 or 202a" : "e.g. 1 or 1-5";
-      new InputModal(this.app, `${collection.name} \u2014 Hadith`, placeholder, "", async (value) => {
+      const supportsProviderReferences = isMuslim && ["hadith-api", "hadith-json"].includes(provider.metadata.id);
+      const warning = provider.metadata.id === "hadith-json" && collection.id.toLowerCase() === "ibnmajah" ? "Hadith JSON has corrupted Ibn Majah numbering. Use hadith-api or Hadith Unlocked for Ibn Majah references." : void 0;
+      const placeholder = isMuslim ? "e.g. 202, 204a or 202-205,204" : "e.g. 1, 5, 10-15";
+      new InputModal(this.app, `${collection.name} \u2014 Hadith`, placeholder, "", async (value, useProviderReference) => {
         const normalized = value.replace(/\s*[-–—]\s*/u, "-").trim().toLowerCase();
-        const ref = parseHadithReference(`${collection.id}:${normalized}`);
-        if (!ref) return;
-        await this.chooseHadithOptions(editor, ref, operation.id, operation.signal, collections);
-      }, () => this.operations.cancel(), (value) => {
+        const refs = parseHadithReferences(`${collection.id}:${normalized}`)?.map((ref) => useProviderReference ? { ...ref, referenceSystem: "provider" } : ref);
+        if (!refs) return;
+        await this.chooseHadithOptions(editor, refs, operation.id, operation.signal, collections);
+      }, () => this.operations.cancel(), (value, useProviderReference) => {
         const normalized = value.replace(/\s*[-–—]\s*/u, "-").trim().toLowerCase();
-        const pattern = isMuslim ? /^\d{1,6}[a-z]?(?:-\d{1,6}[a-z]?)?$/iu : /^\d{1,6}(?:-\d{1,6})?$/u;
-        if (!pattern.test(normalized)) return isMuslim ? "Enter a Hadith number such as 202 or 202a." : "Enter a Hadith number or range, e.g. 1 or 1-5.";
-        const ref = parseHadithReference(`${collection.id}:${normalized}`);
-        return ref ? validateHadithReference(ref, collections, this.pluginSettings.hadithFetchLimit) : "Invalid Hadith/range.";
-      }, "text").open();
+        const refs = parseHadithReferences(`${collection.id}:${normalized}`)?.map((ref) => useProviderReference ? { ...ref, referenceSystem: "provider" } : ref);
+        if (!refs) return "Enter numbers, ranges, or comma-separated references (e.g. 1-5,10).";
+        return refs.map((ref) => validateHadithReference(ref, collections)).find((value2) => value2 !== null) ?? null;
+      }, "text", "text", { allowProviderReference: supportsProviderReferences, warning }).open();
     }, offlineCollectionIds).open();
   }
   getOfflineHadithCollectionIds(providerId, installed) {
@@ -4911,7 +5200,7 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
     }
     return ids;
   }
-  async chooseHadithOptions(editor, ref, id, signal, knownCollections, initialOptions = this.pluginSettings.lastHadithOptions) {
+  async chooseHadithOptions(editor, refs, id, signal, knownCollections, initialOptions = this.pluginSettings.lastHadithOptions) {
     const provider = this.registry.getHadith(this.pluginSettings.hadithProvider);
     let collections = knownCollections;
     if (!collections) {
@@ -4922,7 +5211,7 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
         return;
       }
     }
-    const error = validateHadithReference(ref, collections, this.pluginSettings.hadithFetchLimit);
+    const error = refs.map((ref) => validateHadithReference(ref, collections)).find((value) => value !== null);
     if (error) {
       new import_obsidian6.Notice(`ERROR: ${error}`);
       return;
@@ -4935,29 +5224,26 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
         english: provider.capabilities.englishTranslation,
         // Bukhari and Muslim receive a default Sahih grade when the provider omits one.
         // Keep that fallback user-controlled even for providers without grade metadata.
-        grading: provider.capabilities.grading || ["bukhari", "muslim"].includes(ref.collectionId.toLowerCase()),
-        isnad: provider.metadata.id === "hadith-unlocked"
+        grading: provider.capabilities.grading || refs.some((ref) => ["bukhari", "muslim"].includes(ref.collectionId.toLowerCase())),
+        isnad: provider.metadata.id === "hadith-unlocked" || provider.metadata.id === "hadith-api",
+        traditionalHadithTerms: this.pluginSettings.formatting.traditionalHadithTerms
       },
       async (options) => {
         await this.saveLastOptions("hadith", options);
-        await this.fetchAndInsertHadith(editor, ref, id, signal, options, collections);
+        await this.fetchAndInsertHadith(editor, refs, id, signal, options, collections);
       },
       () => this.operations.cancel()
     ).open();
   }
-  async fetchAndInsertHadith(editor, ref, id, signal, opts = this.pluginSettings.lastHadithOptions, collections) {
+  async fetchAndInsertHadith(editor, refs, id, signal, opts = this.pluginSettings.lastHadithOptions, collections) {
     try {
       const provider = this.registry.getHadith(this.pluginSettings.hadithProvider);
       const translations = await provider.listTranslations({ signal });
       const translation = translations.find((t) => t.id === this.pluginSettings.hadithTranslation && t.language.toLowerCase() === this.pluginSettings.hadithLanguage.toLowerCase()) ?? translations.find((t) => t.id === this.pluginSettings.hadithTranslation) ?? translations.find((t) => t.language.toLowerCase() === this.pluginSettings.hadithLanguage.toLowerCase()) ?? translations.find((t) => t.id === "eng") ?? translations[0];
       if (!translation) throw new AppError("No Hadith translation is configured for this provider.", "validation");
-      const end = ref.endHadithNumber ?? ref.hadithNumber;
-      if (typeof ref.hadithNumber === "number" && typeof end === "number" && end - ref.hadithNumber + 1 > this.pluginSettings.hadithFetchLimit) {
-        throw new AppError(`Hadith fetch limit is ${this.pluginSettings.hadithFetchLimit} hadiths.`, "validation");
-      }
-      const results = await provider.fetchHadithRange(ref, translation, { signal });
+      const results = await fetchHadithReferences(provider, refs, translation, { signal }, this.pluginSettings.hadithFetchLimit);
       if (!this.operations.isCurrent(id)) return;
-      const { normalizeArabic, normalizeEnglish } = createNormalizers(this.pluginSettings);
+      const { normalizeArabic, normalizeEnglish, normalizeGrades: normalizeGrades2 } = createNormalizers(this.pluginSettings);
       const transformed = results.map((result) => {
         const gradedResult = applyDefaultHadithGrading(result);
         const item = structuredClone(gradedResult);
@@ -4965,7 +5251,12 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
         if (item.arabic) item.arabic = normalizeArabic(item.arabic);
         if (item.englishIsnad) item.englishIsnad = normalizeEnglish(item.englishIsnad);
         if (item.english) item.english = normalizeEnglish(item.english);
-        item.grades = item.grades.map((g) => ({ ...g, text: normalizeEnglish(g.text) }));
+        item.grades = normalizeGrades2(item.grades);
+        const destination = hadithLinkDestinationForReference(this.pluginSettings.hadithLinkDestination, provider.metadata.id, item.reference.collectionId, item.reference.referenceSystem === "provider");
+        if (destination) {
+          const link = buildHadithSourceUrl(destination, item.reference.collectionId, item.reference.hadithNumber);
+          if (link) item.source.sourceUrl = link;
+        }
         return item;
       });
       const markdown = transformed.length === 1 ? formatHadith(transformed[0], { ...this.pluginSettings.formatting, showLink: opts.link }, opts) : formatHadithRange(transformed, { ...this.pluginSettings.formatting, showLink: opts.link }, opts);
@@ -4976,7 +5267,7 @@ var QuranHadithFetcherPlugin = class extends import_obsidian6.Plugin {
           if (this.operations.isCurrent(id)) editor.replaceRange(edited, editor.getCursor());
         },
         () => {
-          if (this.operations.isCurrent(id)) void this.chooseHadithOptions(editor, ref, id, signal, collections, opts);
+          if (this.operations.isCurrent(id)) void this.chooseHadithOptions(editor, refs, id, signal, collections, opts);
         }
       ).open();
     } catch (error) {

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+                "file": "Arkhīf/Qawālib/Author Reference.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Imām Ibn al-Jawzī"
+              "title": "Author Reference"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "Imām Ibn al-Jawzī"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -140,7 +139,7 @@
       {
         "id": "5378b58930c2e75c",
         "type": "tabs",
-        "dimension": 23.25581395348837,
+        "dimension": 23.255813953488367,
         "children": [
           {
             "id": "96b644ed2e9f29e2",
@@ -197,7 +196,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+                "file": "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -260,10 +259,17 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "3fc9c1dfa5feff23",
+  "active": "d0c2e56adb3a4fe8",
   "lastOpenFiles": [
-    "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+    "Arkhīf/Qawālib/Permanent Note.md",
     "Arkhīf/Qawālib/Author Reference.md",
+    "Arkhīf/Qawālib/Literature Note.md",
+    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+    "Mudawwanāt/The Human Non-Compliance Propensity.md",
+    "Mudawwanāt/Consequences As Verdict For Actions.md",
+    "Arkhīf/Qawālib/zotlit-profile.default.md",
+    "Arkhīf/Architecture.md",
+    "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
     "Marājiʿ/Aʿmāl/Captured Thoughts.md",
     "Arkhīf/Sijillāt/Aʿmāl.base",
     "Arkhīf/Sijillāt/ʿUlamāʾ.base",
@@ -271,16 +277,13 @@
     "Arkhīf/Sijillāt/Qawālib.base",
     "Arkhīf/Sijillāt/Marājiʿ.base",
     "Arkhīf/Sijillāt/Mudawwanāt.base",
-    "Arkhīf/Architecture.md",
     "Arkhīf/Murfaqāt/11012026 - examtomorrowbutthisishype.png",
     "Arkhīf/Murfaqāt/20261107 - perfectedtheliteratureflow.png",
     "Arkhīf/Lawḥāt",
-    "Arkhīf/Qawālib/zotlit-profile.default.md",
     "Arkhīf/Sijillāt/Marājiʿ - Copy (3).base",
     "Arkhīf/Sijillāt/Marājiʿ - Copy (2).base",
     "Arkhīf/Sijillāt/Marājiʿ - Copy.base",
     "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
-    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
     "Arkhīf/20261107 - perfectedtheliteratureflow.png",
     "20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/20261107 - perfectedtheliteratureflow.png",
@@ -288,10 +291,6 @@
     "Mudawwanāt/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
     "Mudawwanāt/Imām Ibn al-Jawzī.md",
     "Marājiʿ/Muʾallafāt/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-    "Arkhīf/Qawālib/Literature Note.md",
-    "Arkhīf/Qawālib/Permanent Note.md",
-    "Mudawwanāt/The Human Non-Compliance Propensity.md",
-    "Mudawwanāt/Consequences As Verdict For Actions.md",
     "ilmonic Architecture.md",
     "Ilmon's Vault Architecture.md",
     "Further Tag Systemization.md",

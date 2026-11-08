@@ -1,6 +1,0 @@
----
-created:
-  "{ date }":
-tags:
-  - Permanent
----
