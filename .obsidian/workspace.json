@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Arkhīf/Qawālib/Author Reference.md",
+                "file": "Mudawwanāt/Consequences As Verdict For Actions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Author Reference"
+              "title": "Consequences As Verdict For Actions"
             }
           },
           {
@@ -27,15 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+                "file": "Mudawwanāt/The Human Non-Compliance Propensity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Imām Ibn al-Jawzī"
+              "title": "The Human Non-Compliance Propensity"
+            }
+          },
+          {
+            "id": "b7ee9faed97bdb6a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -196,7 +211,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+                "file": "README.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -225,7 +240,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.4675508913371737,
+                  "scale": 0.4675508913371735,
                   "close": true
                 }
               },
@@ -238,8 +253,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.0999755859375,
-    "collapsed": true
+    "width": 415.0999755859375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -259,17 +273,22 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "d0c2e56adb3a4fe8",
+  "active": "b7ee9faed97bdb6a",
   "lastOpenFiles": [
-    "Arkhīf/Qawālib/Permanent Note.md",
-    "Arkhīf/Qawālib/Author Reference.md",
-    "Arkhīf/Qawālib/Literature Note.md",
-    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+    "Masūdāt/The Choice Of Ponder Upon The Prevalent Signs.md",
+    "README.md",
+    "Untitled.md",
+    "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
     "Mudawwanāt/The Human Non-Compliance Propensity.md",
     "Mudawwanāt/Consequences As Verdict For Actions.md",
-    "Arkhīf/Qawālib/zotlit-profile.default.md",
-    "Arkhīf/Architecture.md",
+    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
     "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
+    "Ilmonic/Untitled.md",
+    "Arkhīf/Qawālib/Author Reference.md",
+    "Ilmonic",
+    "Arkhīf/Qawālib/Permanent Note.md",
+    "Arkhīf/Qawālib/Literature Note.md",
+    "Arkhīf/Qawālib/zotlit-profile.default.md",
     "Marājiʿ/Aʿmāl/Captured Thoughts.md",
     "Arkhīf/Sijillāt/Aʿmāl.base",
     "Arkhīf/Sijillāt/ʿUlamāʾ.base",
@@ -282,8 +301,6 @@
     "Arkhīf/Lawḥāt",
     "Arkhīf/Sijillāt/Marājiʿ - Copy (3).base",
     "Arkhīf/Sijillāt/Marājiʿ - Copy (2).base",
-    "Arkhīf/Sijillāt/Marājiʿ - Copy.base",
-    "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
     "Arkhīf/20261107 - perfectedtheliteratureflow.png",
     "20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/20261107 - perfectedtheliteratureflow.png",
@@ -300,8 +317,6 @@
     "Templates/Person Template.md",
     "Templates/Literature Template.md",
     "Templates/Permanent Template.md",
-    "Templates/Quote Template.md",
-    "Templates/Project Template.md",
     "Attachments/Pasted image 20261101192337.png",
     "Attachments/Tagging_with_Templates.png",
     "Attachments/WIN_20261023_16_19_19_Pro.jpg",

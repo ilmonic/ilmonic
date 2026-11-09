@@ -1,7 +1,7 @@
 # 1. Overview
 The vault's entire existence serves an ecosystem for efficient and effective knowledge synthesis.
 If at any point it failed to provide such, the vault's architecture demands urgent refactoring.
-In this documentation, I present the initial starting point of the vault and its anticipated evolutions.
+In this documentation, I present a **snapshot** the Ilmonic's architecture throughout its many **needful** evolutions. 
 
 # 2. Objectives
 The **synthesis** and **publish** of well established and insightful Islamic knowledge.
@@ -9,46 +9,53 @@ The **synthesis** and **publish** of well established and insightful Islamic kno
 # 3. Principles
 
 One principle that rules all else on Ilmon's Vault:
-1. [**Notes Over App**](https://stephango.com/file-over-app), diligently advocated for by the owner of Obsidian himself, Kepano.
+1. [**Notes Over App**](https://stephango.com/file-over-app), diligently advocated for by the owner of Obsidian, Kepano.
 
 In working towards both objectives mentioned above, the notes will have to be:
 2. **Low Entropy**: Streamlined, Unintimidating and Compelling*(synthesis objective)*
 3. **Refined Candor**: Polished, Unvarnished and Visually-appealing *(publishing objective, this is purely for my own enjoyment)*
 
-In the pursuit of the crystallization of the much anticipated Epiphanies there must be a system to follow, manifesting yet again the only building bloc (principle 1) the vault possesses. A system that proved its self over and over again, the notes must follow:
-4. **Luhman's Zettlekasten System**: Implying three types of notes *(fleeting, literature and permanent)* marked through tag type property *(never folder based)*.
-5. **Traceability**: All claims are referenced and instantly verifiable. With "**References**" having their own ecosystems.
-6. NO ARTIFICIAL INTELLEGENCE. ALL BY THE HANDS AND THROUGH THE CONTEMPLATION OF HUMAN.
+In the pursuit of the much anticipated *(yet somehow sudden)* epiphanies there must be a reliable system to follow. I will of course outsource the thinking on that to:
+4. **Luhman's Zettlekasten System**: Implying three types of notes *(fleeting `Masūdāt`, literature `Mudawwanāt` and permanent)*, a system that proves itself over and over again.
 
+And to fulfill the publishing criteria, as well as the credibility for my own most often lacking speech:
+5. **Traceability**: All claims are referenced and instantly clearly verifiable. With "**References**" having their own established ecosystems *(`Marājiʿ`)*.
+
+And most definitely:
+6. NO ARTIFICIAL INTELLEGENCE. ALL BY THE HANDS AND THROUGH THE CONTEMPLATION OF A RAW HUMAN :D
+Although I might ironically feed it.
 # 4. Structure
 
-Principle #1 above underlines this folder structure which is pretty much none-existent except for a navigation clarity sake.
+The first Principle above underlines the dispensability of folder structure.
+That is ONLY serving as a navigational anchor *(as well as cool factor, very important)*
 
-> **ALL NOTES ARE DUMPED INTO THE NOTES FOLDER (MUDAWWANAT)**
+> **THE EVERGREENS, PERMANETS, ATOMICS ARE IN THE ROOT. **
 
-| Folder        | Arabic | Meaning         | Holds                                                                                                                     |
-| ------------- | ------ | --------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `Arkhīf/`     | أرشيف  | archive         | Everything that is not a note. Contains `Murfaqāt/` and `Qawālib/`                                                        |
-| `Marājiʿ/`    | مراجع  | references      | Markdown notes about one specific thing, person, or domain                                                                |
-| `Mudawwanāt/` | مدونات | written records | Markdown notes of type `permanent` or `literature`, each with its own template                                            |
-| `Masūdāt/`    | مسودات | drafts          | Unpublished *(gitignored)*, unfinished writing. No template, no required references. Promoted to `Mudawwanāt/` or deleted |
+| Folder        | Arabic | Meaning         | Holds                                                                                                                              |
+| ------------- | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `Arkhīf/`     | أرشيف  | archive         | Everything that is not a note. Contains `Murfaqāt/`, `Qawālib/`, `Sijillāt/` and `Lawḥāt/`                                         |
+| `Marājiʿ/`    | مراجع  | references      | Markdown notes about one specific thing, person, or domain                                                                         |
+| `Mudawwanāt/` | مدونات | written records | Markdown notes of type `literature`, with their own template. Permanent notes are not here, they live in the root                  |
+| `Masūdāt/`    | مسودات | drafts          | Unpublished *(gitignored)*, unfinished writing. No template, no required references. Promoted to the root *(permanent)* or deleted |
 
-`Arkhīf/` contains all that's excluded from search. But serves in the creation, organization and structuring *(Structure Notes)* of the notes and references themselves.
+*`Arkhīf`* contains all that's excluded from search. But serves in the creation *(`Qawālib`)*, querying *(`Sijillāt`)* and organizations *(`Lawḥāt`)* of the notes and their references.
 
 | Subfolder          | Arabic | Meaning     | Holds                                                                         |
 | ------------------ | ------ | ----------- | ----------------------------------------------------------------------------- |
 | `Arkhīf/Murfaqāt/` | مرفقات | attachments | Anything embedded in a note that is not a note: images, voice notes, drawings |
 | `Arkhīf/Qawālib/`  | قوالب  | templates   | The Templates plugin's source folder. Holds no vault content                  |
+| `Arkhīf/Sijillāt/` | سجلات  | records     | The Obsidian bases  *(`.base` files)*                                         |
+| `Arkhīf/Lawḥāt/`   | لوحات  | boards      | The Obsidian canvases  *(`.canvas` files)*                                    |
 
-with `Marājiʿ/` being the only folder composed of **sub-folders** *(for the better management of referencing terms as well as their re-occurrence).
+With `Marājiʿ/` being the only folder composed of **sub-folders** *(for the better management of referencing types as well as their re-occurrence possibility).
 
-| Subfolder             | Arabic | Meaning           |
-| --------------------- | ------ | ----------------- |
-| `Marājiʿ/Muʾallafāt/` | مؤلفات | authored works    |
-| `Marājiʿ/Mufakkirūn/` | مفكرون | thinkers          |
-| `Marājiʿ/Mabāḥith/`   | مباحث  | fields of inquiry |
+| Subfolder          | Arabic | Meaning           |
+| ------------------ | ------ | ----------------- |
+| `Marājiʿ/Aʿmāl/`   | أعمال  | authored works    |
+| `Marājiʿ/ʿUlamāʾ/` | علماء  | thinkers          |
+| `Marājiʿ/ʿUlūm/`   | علوم   | fields of inquiry |
 
-This diagram outlines how all of the vault centers around the building of the `Mudawwanāt`
+This diagram outlines how all of the vault centers around the kernel of building insights. And that's what Ilmon is for.
 
 ![[Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas]]
 #  5. Workflow

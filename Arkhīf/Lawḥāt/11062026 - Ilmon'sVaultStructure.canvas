@@ -1,11 +1,11 @@
 {
 	"nodes":[
-		{"id":"325709540d184c39","x":-380,"y":40,"width":700,"height":300,"type":"group","label":"Marājiʿ"},
-		{"id":"de65085250fc4c0e","x":-380,"y":360,"width":700,"height":100,"type":"group","label":"Arkhīf"},
-		{"id":"77d59c9de39ee443","type":"text","text":"Mudawwanāt","x":20,"y":-40,"width":250,"height":60},
-		{"id":"e681040a9199319d","type":"text","text":"Muʾallafāt","x":-360,"y":120,"width":250,"height":60},
-		{"id":"6ca2daaebc63aceb","type":"text","text":"Mufakkirūn","x":-360,"y":240,"width":250,"height":60},
-		{"id":"b3ec18357fd7eebd","type":"text","text":"Mabāḥith","x":20,"y":240,"width":250,"height":60},
+		{"id":"325709540d184c39","type":"group","x":-380,"y":40,"width":700,"height":300,"label":"Marājiʿ"},
+		{"id":"de65085250fc4c0e","type":"group","x":-380,"y":360,"width":700,"height":100,"label":"Arkhīf"},
+		{"id":"77d59c9de39ee443","type":"text","text":"Insights","x":20,"y":-40,"width":250,"height":60},
+		{"id":"e681040a9199319d","type":"text","text":"Aʿmāl","x":-360,"y":120,"width":250,"height":60},
+		{"id":"6ca2daaebc63aceb","type":"text","text":"ʿUlamāʾ","x":-360,"y":240,"width":250,"height":60},
+		{"id":"b3ec18357fd7eebd","type":"text","text":"ʿUlūm","x":20,"y":240,"width":250,"height":60},
 		{"id":"eb6c484f9cd98e69","type":"text","text":"Qawālib","x":20,"y":380,"width":250,"height":60},
 		{"id":"cdc56edd9524031f","type":"text","text":"Murfaqāt","x":-360,"y":380,"width":250,"height":60}
 	],

@@ -17,6 +17,9 @@ views:
     filters:
       and:
         - list(author).contains(this)
+    order:
+      - file.name
+      - arabicTitle
     sort:
       - property: file.name
         direction: ASC

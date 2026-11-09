@@ -12,7 +12,7 @@ It's indeed in our nature. Beautifully depicted by this metaphor by [[Marājiʿ/
 >
 > لأن مثل الطبع في ميله إلى الدنيا كالماء الجاري، فإنه يطلب الهبوط؛ وإنما رفعه إلى فوق يحتاج إلى التكلف.
 
-And it is for this prevalent and pervasive nature that it's **less foreseeable** for the human to comply to the Qur'an than it is for the latter to Qur'an the human.
+And it is for this prevalent and pervasive nature that it's **less foreseeable** for the human to comply to the Qur'an than it is for the latter to command the human.
 
 > [!note] Page [70](zotero://open/library/items/FYSA9UFZ?annotation=QF9JUA4U&page=70)
 >

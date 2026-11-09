@@ -25,7 +25,7 @@ The attendance of religious sermons and exhortations has an undeniable bearing o
 
 Meanwhile fluctuating in this spectrum, many come to see that both captivities are worlds apart from each other *(literally)*.
 
-And in that same fluctuation do people decide and disperse towards that which they think they should hold unto.
+And in that same fluctuation do people decide and disperse towards that which they think deem worthy of their lives.
 
 > [!note] [Sahih Muslim 2750a](https://sunnah.com/muslim:2750a)‏
 >
@@ -33,7 +33,6 @@ And in that same fluctuation do people decide and disperse towards that which th
 > 
 > حَدَّثَنَا يَحْيَى ..‏.‏ قُلْتُ يَا رَسُولَ اللَّهِ نَكُونُ عِنْدَكَ تُذَكِّرُنَا بِالنَّارِ وَالْجَنَّةِ حَتَّى كَأَنَّا رَأْىَ عَيْنٍ فَإِذَا خَرَجْنَا مِنْ عِنْدِكَ عَافَسْنَا الأَزْوَاجَ وَالأَوْلاَدَ وَالضَّيْعَاتِ نَسِينَا كَثِيرًا ‏.‏ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏"‏ وَالَّذِي نَفْسِي بِيَدِهِ إِنْ لَوْ تَدُومُونَ عَلَى مَا تَكُونُونَ عِنْدِي وَفِي الذِّكْرِ لَصَافَحَتْكُمُ الْمَلاَئِكَةُ عَلَى فُرُشِكُمْ وَفِي طُرُقِكُمْ وَلَكِنْ يَا حَنْظَلَةُ سَاعَةً وَسَاعَةً ‏"‏ ‏.‏ ثَلاَثَ مَرَّاتٍ.
 
-And thereby Islam even tells you precisely where to try and disperse towards.
+Islam even tells you precisely where to disperse towards.
 **-> Right in the middle.**
 Three times the messenger of Allah SAW said it. How gorgeous is that?
-:")
