@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 14,
+  "schemaVersion": 15,
   "quranProvider": "alquran-cloud",
   "hadithProvider": "hadith-json",
   "quranLanguage": "en",
@@ -7,6 +7,7 @@
   "hadithLanguage": "en",
   "hadithTranslation": "en",
   "quranWebsite": "quran-com",
+  "hadithLinkDestination": "provider",
   "customQuranUrl": "https://www.myquranwebsite.com/$surah/$ayah-$ayahlast",
   "formatting": {
     "entirePrefix": "",
@@ -28,7 +29,8 @@
     "quranAyahOpen": "{",
     "quranAyahClose": "}",
     "quranAyahStyle": "curly",
-    "codeSyntaxMode": "replace"
+    "codeSyntaxMode": "replace",
+    "traditionalHadithTerms": true
   },
   "replacementRules": [
     {
@@ -128,6 +130,7 @@
     "set-quran-website": false,
     "set-hadith-provider": false,
     "set-hadith-translation": false,
+    "set-hadith-website": false,
     "manage-offline-databases": false,
     "check-provider-health": true,
     "normalize-salutations": true,

@@ -1,7 +1,8 @@
 filters:
   and:
     - file.ext == "md"
-    - file.folder == "Marājiʿ/ʿUlamāʾ"
+    - file.folder == "Marājiʿ"
+    - file.tags.contains("type/author")
 views:
   - type: table
     name: All

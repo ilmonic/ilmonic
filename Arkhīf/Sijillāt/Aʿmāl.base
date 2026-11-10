@@ -1,7 +1,8 @@
 filters:
   and:
     - file.ext == "md"
-    - file.folder == "Marājiʿ/Aʿmāl"
+    - file.folder == "Marājiʿ"
+    - file.tags.contains("type/book")
 views:
   - type: table
     name: All

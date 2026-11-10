@@ -5,17 +5,17 @@ created @Nov4th? I think not sure.
 ```
 The attendance of religious sermons and exhortations has an undeniable bearing on the heart. And yet it appears that such impact is transient. And such transience is thwarting.
 
-[[Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]] accorded this sweeping pattern to the oscillating nature of the heart in between two forces, each exerting its own pull:
+[[Marājiʿ/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]] accorded this sweeping pattern to the oscillating nature of the heart in between two forces, each exerting its own pull:
 
 1. Sermons' enchantment of the heart - momentarily deflecting it from the business of the Dunya.
-   > [!citation] Page [66](zotero://open/library/items/FYSA9UFZ?annotation=2DZ2U2NW&page=66)
+   > [!Quote] Page [66](zotero://open/library/items/FYSA9UFZ?annotation=2DZ2U2NW&page=66)
 >
 > the mechanism and effect of exhorta tions and reminders is similar to the effect of whips and lashes on people;
 >
 > «صيد الخاطر» (ص24):  
 > «أن المواعظ كالسياط، والسياط لا تؤلم بعد انقضائها، وإيلامها وقت وقوعها»
 2. Dunya's perpetual perpetual seizing of the heart - and that's the name of the game.
-   > [!note] Page [67](zotero://open/library/items/FYSA9UFZ?annotation=WVHSJMQP&page=67)
+   > [!Quote] Page [67](zotero://open/library/items/FYSA9UFZ?annotation=WVHSJMQP&page=67)
 >
 > the mind and the heart at the  time o f hearing exhortadons and sermons are detached from all worldly distractions, hence the heart listens attentively.
 >
@@ -27,7 +27,7 @@ Meanwhile fluctuating in this spectrum, many come to see that both captivities a
 
 And in that same fluctuation do people decide and disperse towards that which they think deem worthy of their lives.
 
-> [!note] [Sahih Muslim 2750a](https://sunnah.com/muslim:2750a)‏
+> [!Quote] [Sahih Muslim 2750a](https://sunnah.com/muslim:2750a)‏
 >
 > Hanzala ... Thereupon Allah's Messenger (ﷺ) said: What has happened to you? I said: Allah's Messenger, when we are in your company, we are reminded of Hell-Fire and Paradise as if we are seeing them with our own eyes, but whenever we go away from you and attend to our wives, children and business, much of these things go out of our minds. Thereupon Allah's Messenger (ﷺ) said: By Him in Whose Hand is my life, if your state of mind remains the same as it is in my presence and you are always busy in remembrance (of Allah), the Angels will shake hands with you in your beds and in your paths but, Hanzala, time should be devoted (to the worldly affairs) and time (should be devoted to prayer and meditation). He (the Holy Prophet) said this thrice.
 > 

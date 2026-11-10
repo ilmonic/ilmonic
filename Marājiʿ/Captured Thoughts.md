@@ -2,7 +2,7 @@
 fullTitle: "Captured Thoughts: A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships"
 arabicTitle: صيد الخاطر
 author:
-  - "[[Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]]"
+  - "[[Marājiʿ/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]]"
 publisher: Dār as-Sunnah Publishers
 tags: "#type/book"
 rating: 3

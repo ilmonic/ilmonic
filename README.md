@@ -1,7 +1,7 @@
 # 1. Overview
 The vault's entire existence serves an ecosystem for efficient and effective knowledge synthesis.
 If at any point it failed to provide such, the vault's architecture demands urgent refactoring.
-In this documentation, I present a **snapshot** the Ilmonic's architecture throughout its many **needful** evolutions. 
+In this documentation, I present a snapshot the Ilmonic's architecture *(throughout its many needful evolutions)*. 
 
 # 2. Objectives
 The **synthesis** and **publish** of well established and insightful Islamic knowledge.
@@ -29,7 +29,7 @@ Although I might ironically feed it.
 The first Principle above underlines the dispensability of folder structure.
 That is ONLY serving as a navigational anchor *(as well as cool factor, very important)*
 
-> **THE EVERGREENS, PERMANETS, ATOMICS ARE IN THE ROOT. **
+> **THE EVERGREENS ARE IN THE ROOT.**
 
 | Folder        | Arabic | Meaning         | Holds                                                                                                                              |
 | ------------- | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,10 +55,12 @@ With `Marājiʿ/` being the only folder composed of **sub-folders** *(for the be
 | `Marājiʿ/ʿUlamāʾ/` | علماء  | thinkers          |
 | `Marājiʿ/ʿUlūm/`   | علوم   | fields of inquiry |
 
-This diagram outlines how all of the vault centers around the kernel of building insights. And that's what Ilmon is for.
+# 5. Relations
+This diagram outlines how all of the vault centers around the building of insights.
 
 ![[Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas]]
-#  5. Workflow
+
+#  6. Workflow
 
 ## Reading Workflow
 I spent way too much time contemplating the flow of reading, one of the most straightforward actions to ever be, if not the agonizing tradeoff between the reading of:
@@ -88,3 +90,4 @@ Haven't wrote much, don't know much.
 ## Production Workflow
 
 Never done anything yet...
+

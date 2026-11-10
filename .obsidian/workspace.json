@@ -8,49 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d0c2e56adb3a4fe8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mudawwanāt/Consequences As Verdict For Actions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Consequences As Verdict For Actions"
-            }
-          },
-          {
-            "id": "3fc9c1dfa5feff23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mudawwanāt/The Human Non-Compliance Propensity.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Human Non-Compliance Propensity"
-            }
-          },
-          {
             "id": "b7ee9faed97bdb6a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Mudawwanāt/The Indispensability Of Self-Scrutiny.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "The Indispensability Of Self-Scrutiny"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -113,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277.5
+    "width": 258.3000183105469
   },
   "right": {
     "id": "09875ecb8b646b8f",
@@ -142,7 +113,8 @@
               "state": {
                 "followMode": "pinned",
                 "previousMode": "zotero-reader",
-                "pinnedItemKey": "VC7A4TPD"
+                "pinnedItemKey": "VC7A4TPD",
+                "query": "filters: attachment == this.attachment\nviews:\n  - type: annotations\n    name: Zotero annotations\n    from: annotations\n    sort:\n      - property: sortIndex\n        direction: DESC\n"
               },
               "icon": "highlighter",
               "title": "Zotero annotations"
@@ -211,7 +183,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "README.md",
+                "file": "Mudawwanāt/The Indispensability Of Self-Scrutiny.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -240,7 +212,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.4675508913371735,
+                  "scale": 0.4675508913371732,
                   "close": true
                 }
               },
@@ -253,7 +225,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.0999755859375
+    "width": 415.0999755859375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -275,32 +248,33 @@
   },
   "active": "b7ee9faed97bdb6a",
   "lastOpenFiles": [
-    "Masūdāt/The Choice Of Ponder Upon The Prevalent Signs.md",
+    "Arkhīf/Sijillāt/Marājiʿ.base",
+    "Marājiʿ/Captured Thoughts.md",
+    "Marājiʿ/Imām Ibn al-Jawzī.md",
+    "Arkhīf/Sijillāt/ʿUlamāʾ.base",
+    "Arkhīf/Sijillāt/Aʿmāl.base",
+    "Arkhīf/Sijillāt/ʿUlūm.base",
+    "Arkhīf/Qawālib/Author Reference.md",
     "README.md",
+    "Mudawwanāt/The Indispensability Of Self-Scrutiny.md",
+    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
+    "Arkhīf/Qawālib/zotlit-profile.default.md",
+    "Arkhīf/Qawālib/zotlit-citation.md",
+    "Mudawwanāt/Consequences As Verdict For Actions.md",
+    "Mudawwanāt/The Human Non-Compliance Propensity.md",
+    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
+    "Arkhīf/Sijillāt/Mudawwanāt.base",
     "Untitled.md",
     "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
-    "Mudawwanāt/The Human Non-Compliance Propensity.md",
-    "Mudawwanāt/Consequences As Verdict For Actions.md",
-    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
-    "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
     "Ilmonic/Untitled.md",
-    "Arkhīf/Qawālib/Author Reference.md",
     "Ilmonic",
     "Arkhīf/Qawālib/Permanent Note.md",
     "Arkhīf/Qawālib/Literature Note.md",
-    "Arkhīf/Qawālib/zotlit-profile.default.md",
-    "Marājiʿ/Aʿmāl/Captured Thoughts.md",
-    "Arkhīf/Sijillāt/Aʿmāl.base",
-    "Arkhīf/Sijillāt/ʿUlamāʾ.base",
-    "Arkhīf/Sijillāt/ʿUlūm.base",
     "Arkhīf/Sijillāt/Qawālib.base",
-    "Arkhīf/Sijillāt/Marājiʿ.base",
-    "Arkhīf/Sijillāt/Mudawwanāt.base",
     "Arkhīf/Murfaqāt/11012026 - examtomorrowbutthisishype.png",
     "Arkhīf/Murfaqāt/20261107 - perfectedtheliteratureflow.png",
     "Arkhīf/Lawḥāt",
     "Arkhīf/Sijillāt/Marājiʿ - Copy (3).base",
-    "Arkhīf/Sijillāt/Marājiʿ - Copy (2).base",
     "Arkhīf/20261107 - perfectedtheliteratureflow.png",
     "20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/20261107 - perfectedtheliteratureflow.png",
@@ -316,7 +290,6 @@
     "ilmon manifesto.md",
     "Templates/Person Template.md",
     "Templates/Literature Template.md",
-    "Templates/Permanent Template.md",
     "Attachments/Pasted image 20261101192337.png",
     "Attachments/Tagging_with_Templates.png",
     "Attachments/WIN_20261023_16_19_19_Pro.jpg",
