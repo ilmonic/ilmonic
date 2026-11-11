@@ -1,6 +1,7 @@
 ---
 tags:
-  - type/author
+  - noteType/reference
+  - subjectType/author
 arabicName: ابن الجوزي
 fullName: Abu'l-Faraj ʿAbd al-Raḥmān ibn ʿAlī ibn Muḥammad
 lifePeriod: 1116 – 1201
@@ -18,4 +19,4 @@ mentors:
 ---
 # Books Authored
 
-![[Arkhīf/Sijillāt/Aʿmāl.base#Author]]
+![[Marājiʿ.base#BooksByThisAuthor]]

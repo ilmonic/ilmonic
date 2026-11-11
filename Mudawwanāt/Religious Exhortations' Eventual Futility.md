@@ -1,29 +1,32 @@
-```
-templates are yet to be made until then this is from:
-Chapter 2 - Worldly Pleasures versus Pleasures o f the  Hereafter
-created @Nov4th? I think not sure.
-```
+---
+tags:
+  - "#noteType/literature"
+  - "#subjectType/book"
+book: "[[Marājiʿ/Captured Thoughts|Captured Thoughts]]"
+chapterNumber: "1"
+chapterName: The Hearts vary in the Susceptibility to [Religious] Exhortations
+---
 The attendance of religious sermons and exhortations has an undeniable bearing on the heart. And yet it appears that such impact is transient. And such transience is thwarting.
 
 [[Marājiʿ/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]] accorded this sweeping pattern to the oscillating nature of the heart in between two forces, each exerting its own pull:
 
 1. Sermons' enchantment of the heart - momentarily deflecting it from the business of the Dunya.
-   > [!Quote] Page [66](zotero://open/library/items/FYSA9UFZ?annotation=2DZ2U2NW&page=66)
+> [!Quote] [[Marājiʿ/Captured Thoughts|Captured Thoughts]] Page [66](zotero://open/library/items/FYSA9UFZ?annotation=2DZ2U2NW&page=66)
 >
-> the mechanism and effect of exhorta tions and reminders is similar to the effect of whips and lashes on people;
+> the mechanism and effect o f exhorta  tions and reminders is similar to the effect of whips and lashes on people;
 >
 > «صيد الخاطر» (ص24):  
 > «أن المواعظ كالسياط، والسياط لا تؤلم بعد انقضائها، وإيلامها وقت وقوعها»
+
 2. Dunya's perpetual perpetual seizing of the heart - and that's the name of the game.
-   > [!Quote] Page [67](zotero://open/library/items/FYSA9UFZ?annotation=WVHSJMQP&page=67)
+> [!Quote] [[Marājiʿ/Captured Thoughts|Captured Thoughts]] Page [67](zotero://open/library/items/FYSA9UFZ?annotation=WVHSJMQP&page=67)
 >
 > the mind and the heart at the  time o f hearing exhortadons and sermons are detached from all worldly distractions, hence the heart listens attentively.
 >
 > «صيد الخاطر» (ص24):  
 > «أن حالة سماع المواعظ يكون الإنسان فيها مزاح العلة *(خلي عن الشواغل التي تصرفه عن التأثير بالمواعظ)*، قد تخلى بجسمه وفكره عن أسباب الدنيا، وأنصت بحضور قلبه؛»  
->
 
-Meanwhile fluctuating in this spectrum, many come to see that both captivities are worlds apart from each other *(literally)*.
+Meanwhile fluctuating in this spectrum *(awarness and neglection)*, many come to see that both captivities are worlds apart from each other *(literally)*.
 
 And in that same fluctuation do people decide and disperse towards that which they think deem worthy of their lives.
 

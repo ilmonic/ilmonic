@@ -8,3 +8,19 @@ views:
     sort:
       - property: file.name
         direction: ASC
+  - type: table
+    name: Authors
+    filters:
+      and:
+        - file.tags.containsAll("noteType\\reference", "subjectType\\author")
+  - type: table
+    name: Books
+    filters:
+      and:
+        - file.tags.containsAll("noteType/reference", "subjectType/book")
+  - type: table
+    name: BooksByThisAuthor
+    filters:
+      and:
+        - file.tags.containsAll("noteType/reference", "subjectType/book")
+        - list(author).contains(this)

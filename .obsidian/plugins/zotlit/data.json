@@ -3,7 +3,7 @@
   "release.previous-version": "2.2.1",
   "note.default-profile": {
     "bindings": {
-      "note.literature-folder": "Marājiʿ/Muʾallafāt",
+      "note.literature-folder": "Marājiʿ",
       "citation.references-style": null,
       "note.import-folder": "Arkhīf",
       "note.import-colored-highlights": true,
@@ -31,6 +31,7 @@
     "cardClosed": true
   },
   "reader.recent-colors": [
+    "#2ea8e5",
     "#ffd400"
   ],
   "citation.show-citekey-in-suggester": true,

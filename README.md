@@ -2,27 +2,25 @@
 The vault's entire existence serves an ecosystem for efficient and effective knowledge synthesis.
 If at any point it failed to provide such, the vault's architecture demands urgent refactoring.
 In this documentation, I present a snapshot the Ilmonic's architecture *(throughout its many needful evolutions)*. 
-
 # 2. Objectives
 The **synthesis** and **publish** of well established and insightful Islamic knowledge.
-
 # 3. Principles
 
 One principle that rules all else on Ilmon's Vault:
-1. [**Notes Over App**](https://stephango.com/file-over-app), diligently advocated for by the owner of Obsidian, Kepano.
+1. [**Notes Over App**](https://stephango.com/file-over-app), I also call it "Identity Within" *(file's definition lives in the file itself)*. Diligently advocated for by the owner of Obsidian, Kepano.
 
 In working towards both objectives mentioned above, the notes will have to be:
 2. **Low Entropy**: Streamlined, Unintimidating and Compelling*(synthesis objective)*
 3. **Refined Candor**: Polished, Unvarnished and Visually-appealing *(publishing objective, this is purely for my own enjoyment)*
 
 In the pursuit of the much anticipated *(yet somehow sudden)* epiphanies there must be a reliable system to follow. I will of course outsource the thinking on that to:
-4. **Luhman's Zettlekasten System**: Implying three types of notes *(fleeting `Masūdāt`, literature `Mudawwanāt` and permanent)*, a system that proves itself over and over again.
+4. **Luhmann's Zettlekasten System**: Implying three types of notes *(fleeting `Masūdāt`, literature `Mudawwanāt` and permanent)*, a system that proves itself over and over again.
 
 And to fulfill the publishing criteria, as well as the credibility for my own most often lacking speech:
 5. **Traceability**: All claims are referenced and instantly clearly verifiable. With "**References**" having their own established ecosystems *(`Marājiʿ`)*.
 
 And most definitely:
-6. NO ARTIFICIAL INTELLEGENCE. ALL BY THE HANDS AND THROUGH THE CONTEMPLATION OF A RAW HUMAN :D
+6. NO ARTIFICIAL INTELLIGENCE. ALL BY THE HANDS AND THROUGH THE CONTEMPLATION OF A RAW HUMAN :D
 Although I might ironically feed it.
 # 4. Structure
 
@@ -34,10 +32,9 @@ That is ONLY serving as a navigational anchor *(as well as cool factor, very imp
 | Folder        | Arabic | Meaning         | Holds                                                                                                                              |
 | ------------- | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `Arkhīf/`     | أرشيف  | archive         | Everything that is not a note. Contains `Murfaqāt/`, `Qawālib/`, `Sijillāt/` and `Lawḥāt/`                                         |
-| `Marājiʿ/`    | مراجع  | references      | Markdown notes about one specific thing, person, or domain                                                                         |
+| `Marājiʿ/`    | مراجع  | references      | Markdown notes about one specific work, person, concept or domain                                                                  |
 | `Mudawwanāt/` | مدونات | written records | Markdown notes of type `literature`, with their own template. Permanent notes are not here, they live in the root                  |
 | `Masūdāt/`    | مسودات | drafts          | Unpublished *(gitignored)*, unfinished writing. No template, no required references. Promoted to the root *(permanent)* or deleted |
-
 *`Arkhīf`* contains all that's excluded from search. But serves in the creation *(`Qawālib`)*, querying *(`Sijillāt`)* and organizations *(`Lawḥāt`)* of the notes and their references.
 
 | Subfolder          | Arabic | Meaning     | Holds                                                                         |
@@ -46,22 +43,17 @@ That is ONLY serving as a navigational anchor *(as well as cool factor, very imp
 | `Arkhīf/Qawālib/`  | قوالب  | templates   | The Templates plugin's source folder. Holds no vault content                  |
 | `Arkhīf/Sijillāt/` | سجلات  | records     | The Obsidian bases  *(`.base` files)*                                         |
 | `Arkhīf/Lawḥāt/`   | لوحات  | boards      | The Obsidian canvases  *(`.canvas` files)*                                    |
+`Marājiʿ` previously had `Aʿmāl`, `ʿUlamāʾ` and `ʿUlūm` *("for the better management of referencing types as well as their re-occurrence possibility")*, but that quickly appears to be a flawed excuse whilst contradicting The Identity Within principle. 
+# 5. Entities
 
-With `Marājiʿ/` being the only folder composed of **sub-folders** *(for the better management of referencing types as well as their re-occurrence possibility).
+| Note Type \ Subject Type             | `subjectType/book`                                               | `subjectType/author`                                  | `subjectType/field` |
+| ------------------------------------ | ---------------------------------------------------------------- | ----------------------------------------------------- | ------------------- |
+| `noteType/reference` *(Mudawwanāt/)* | [[Arkhīf/Qawālib/zotlit-profile.default\|Zotero Book Reference]] | [[Arkhīf/Qawālib/Author Reference\|Author Reference]] | Not defined yet.    |
+| `noteType/literature` *(Marājiʿ/)*   | [[Arkhīf/Qawālib/Book Literature\|Book Literature]]              | Not defined yet.                                      | Not defined yet.    |
+# 6. Relations
 
-| Subfolder          | Arabic | Meaning           |
-| ------------------ | ------ | ----------------- |
-| `Marājiʿ/Aʿmāl/`   | أعمال  | authored works    |
-| `Marājiʿ/ʿUlamāʾ/` | علماء  | thinkers          |
-| `Marājiʿ/ʿUlūm/`   | علوم   | fields of inquiry |
 
-# 5. Relations
-This diagram outlines how all of the vault centers around the building of insights.
-
-![[Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas]]
-
-#  6. Workflow
-
+#  7. Workflow
 ## Reading Workflow
 I spent way too much time contemplating the flow of reading, one of the most straightforward actions to ever be, if not the agonizing tradeoff between the reading of:
 1. The original Arabic where you tap into the Author's own raw articulation and choice of words in his depiction of his thoughts. An advantage I will murder people for :D 

@@ -1,3 +1,11 @@
+---
+tags:
+  - noteType/literature
+  - subjectType/book
+book: "[[Marājiʿ/Captured Thoughts|Captured Thoughts]]"
+chapterNumber: "4"
+chapterName: The Comfort of Illusion [Worldly Pleasures]
+---
 Contemplation on the matters of this life is not a vanity for the intellectual.
 And it is indeed the self, the most worthy of stubborn examination 
 
@@ -55,7 +63,7 @@ How else would one disclose the deceiving duplicities we persistently and cluele
 > لأَنَّ الذي يَأْتِي كَمِثْل الذي مَضَى ... وما هُو إِلاَّ وَقْتُكَ الضَّيّقُ النِّزْرُ
 > فصَبْرًا عَلَى الأَوْقَاتِ حَتَّى تَحُوزَهَا ... فعمَّا قَلِيْل بَعْدَهَا يَنْفَعُ الصَّبْرُ
 
-And slowly the duplicities lead us to that of the life and death.
+And slowly the duplicities lead to that of the life and death.
 With [[Marājiʿ/Imām Ibn al-Jawzī|Imām Ibn al-Jawzī]] gently introspecting the state of the human.
 delicately and eloquently probing:
 
@@ -65,5 +73,3 @@ delicately and eloquently probing:
 >
 > «صيد الخاطر» (ص26):  
 > «وكيف تنام العين وهي قريرة … ولم تدر من أي المحلين تنزل؟»
-
-Like truly? How?

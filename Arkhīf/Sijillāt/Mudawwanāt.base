@@ -8,8 +8,23 @@ views:
     order:
       - file.name
       - file.ctime
+      - tags
+    sort: []
+    columnSize:
+      file.name: 459
+  - type: table
+    name: LiteratureOnThisBook
+    filters:
+      and:
+        - list(book).contains(this)
+    order:
+      - chapterNumber
+      - file.name
+      - chapterName
     sort:
-      - property: file.name
+      - property: chapterNumber
         direction: ASC
     columnSize:
-      file.name: 450
+      note.chapterNumber: 13
+      file.name: 335
+      note.chapterName: 413

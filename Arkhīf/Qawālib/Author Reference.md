@@ -4,8 +4,9 @@ arabicName:
 lifePeriod:
 mentors:
 tags:
-  - type/author
+  - noteType/reference
+  - subjectType/author
 ---
 # Books Authored
 
-![[Arkhīf/Sijillāt/Aʿmāl.base#Author]]
+![[Marājiʿ.base#BooksByThisAuthor]]
