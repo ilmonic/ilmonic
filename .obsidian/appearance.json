@@ -3,5 +3,6 @@
   "baseFontSizeAction": false,
   "baseFontSize": 18,
   "theme": "obsidian",
-  "interfaceFontFamily": "Segoe UI"
+  "interfaceFontFamily": "Segoe UI",
+  "showRibbon": true
 }
