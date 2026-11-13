@@ -13,15 +13,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mudawwanāt/Punishment As The Embellishment Of It.md",
+                "file": "Mudawwanāt/Ambition, The Indicative Of Intellect.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Punishment As The Embellishment Of It"
+              "title": "Ambition, The Indicative Of Intellect"
+            }
+          },
+          {
+            "id": "4e577222d7d5129a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Masūdāt/The Creator's Love.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The Creator's Love"
+            }
+          },
+          {
+            "id": "c8f61ceef5d275ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mudawwanāt/Ambition, The Indicative Of Intellect.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ambition, The Indicative Of Intellect"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -84,7 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 331.5
+    "width": 399.5
   },
   "right": {
     "id": "09875ecb8b646b8f",
@@ -183,7 +212,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Mudawwanāt/Punishment As The Embellishment Of It.md",
+                "file": "Mudawwanāt/Ambition, The Indicative Of Intellect.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -212,7 +241,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.33349257831805706,
+                  "scale": 0.2378720730809631,
                   "close": true
                 }
               },
@@ -245,51 +274,51 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "eb9dd84bdaa7f416",
+  "active": "c8f61ceef5d275ca",
   "lastOpenFiles": [
-    "Mudawwanāt/Punishment As The Embellishment Of It.md",
-    "Mudawwanāt/Prudence As The Sapience Hallmark.md",
-    "Mudawwanāt/Religious Exhortations' Eventual Futility.md",
-    "README.md",
-    "Mudawwanāt/The Indispensability Of Self-Scrutiny.md",
-    "Mudawwanāt/Consequences As Verdict For Actions.md",
-    "Mudawwanāt/The Human Non-Compliance Propensity.md",
-    "Marājiʿ/Imām Ibn al-Jawzī.md",
-    "Marājiʿ/Captured Thoughts.md",
-    "Arkhīf/Qawālib/Author Reference.md",
-    "Arkhīf/Qawālib/zotlit-profile.default.md",
-    "Arkhīf/Sijillāt/Mudawwanāt.base",
-    "Arkhīf/Sijillāt/Marājiʿ.base",
-    "Arkhīf/Sijillāt/Qawālib.base",
-    "Arkhīf/Qawālib/Book Literature.md",
-    "file:C:/Users/rania/Zotero/storage/FYSA9UFZ/Captured Thoughts.pdf",
-    "Arkhīf/Qawālib/zotlit-citation.md",
-    "Arkhīf/Sijillāt/ʿUlūm.base",
-    "Arkhīf/Sijillāt/ʿUlamāʾ.base",
-    "Arkhīf/Sijillāt/Aʿmāl.base",
+    "Masūdāt/The Creator's Love.md",
+    "Mudawwanāt/Ambition, The Indicative Of Intellect.md",
+    "Qur’ān/99 - Az-Zalzalah/q - Az-Zalzalah (99).md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 8.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 7.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 6.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 5.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 4.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 3.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 2.md",
+    "Qur’ān/99 - Az-Zalzalah/q - 99 - 1.md",
+    "Qur’ān/98 - Al-Bayyinah/q - Al-Bayyinah (98).md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 8.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 7.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 5.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 6.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 4.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 3.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 2.md",
+    "Qur’ān/97 - Al-Qadr/q - 97 - 5.md",
+    "Qur’ān/98 - Al-Bayyinah/q - 98 - 1.md",
+    "Qur’ān/97 - Al-Qadr/q - Al-Qadr (97).md",
+    "Qur’ān/97 - Al-Qadr/q - 97 - 4.md",
+    "Qur’ān/97 - Al-Qadr/q - 97 - 3.md",
+    "Qur’ān/97 - Al-Qadr/q - 97 - 2.md",
+    "Qur’ān/97 - Al-Qadr/q - 97 - 1.md",
+    "Qur’ān/99 - Az-Zalzalah",
+    "Qur’ān/98 - Al-Bayyinah",
+    "Qur’ān/97 - Al-Qadr",
+    "Qur’ān/96 - Al-'Alaq",
+    "Qur’ān/95 - At-Tin",
+    "Qur’ān/94 - Ash-Sharh",
+    "Qur’ān/93 - Ad-Duhaa",
+    "Qur’ān/92 - Al-Layl",
+    "Qur’ān/91 - Ash-Shams",
+    "Qur’ān/90 - Al-Balad",
     "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
-    "MarājiʿImām Ibn al-Jawzī.md",
-    "Marājiʿ/ʿUlamāʾ/Imām Ibn al-Jawzī.md",
-    "Marājiʿ/ʿUlamāʾ",
-    "Marājiʿ/Muʾallafāt",
-    "Ilmonic/Untitled.md",
-    "Ilmonic",
-    "Arkhīf/Qawālib/Permanent Note.md",
-    "Arkhīf/Qawālib/Literature Note.md",
     "Arkhīf/Murfaqāt/11012026 - examtomorrowbutthisishype.png",
     "Arkhīf/Murfaqāt/20261107 - perfectedtheliteratureflow.png",
     "Arkhīf/20261107 - perfectedtheliteratureflow.png",
     "20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/Pasted image 20261107115432.png",
-    "Mudawwanāt/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-    "Mudawwanāt/Imām Ibn al-Jawzī.md",
-    "Marājiʿ/Muʾallafāt/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-    "ilmonic Architecture.md",
-    "Ilmon's Vault Architecture.md",
-    "Further Tag Systemization.md",
-    "Literature/Captured Thoughts_ A Collection of Thought-Provoking Gems, Persuasive Eye Opening Wisdoms, Insights about Religion, Ethics and Relationships.md",
-    "vault framework and their affects.md",
     "Attachments/Pasted image 20261101192337.png",
     "Attachments/Tagging_with_Templates.png",
     "Attachments/WIN_20261023_16_19_19_Pro.jpg",
