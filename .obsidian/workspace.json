@@ -8,63 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "eb9dd84bdaa7f416",
+            "id": "7c4d02c569da8084",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mudawwanāt/Ambition, The Indicative Of Intellect.md",
+                "file": "Masūdāt/Qur’ān/التكوير · At-Takwir/التكوير · At-Takwir · 27.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ambition, The Indicative Of Intellect"
-            }
-          },
-          {
-            "id": "4e577222d7d5129a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Masūdāt/The Creator's Love.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Creator's Love"
-            }
-          },
-          {
-            "id": "c8f61ceef5d275ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Masūdāt/The Creator's Love.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Creator's Love"
-            }
-          },
-          {
-            "id": "9decaecc915ef812",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "The Calamity Of Aberrated Cogitation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Calamity Of Aberrated Cogitation"
+              "title": "التكوير · At-Takwir · 27"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -225,7 +182,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "The Calamity Of Aberrated Cogitation.md",
+                "file": "Masūdāt/Qur’ān/التكوير · At-Takwir/التكوير · At-Takwir · 27.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -267,8 +224,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 415.0999755859375,
-    "collapsed": true
+    "width": 415.0999755859375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -288,55 +244,55 @@
       "zotlit:Open Zotero library": false
     }
   },
-  "active": "9decaecc915ef812",
+  "active": "7c4d02c569da8084",
   "lastOpenFiles": [
-    "The Calamity Of Aberrated Cogitation.md",
-    "Masūdāt/The Creator's Love.md",
-    "Masūdāt/Immediate Preparation Is The Ever-Going Pursuit.md",
-    "Masūdāt/Punishment As Merciful Eraser.md",
-    "Mudawwanāt/Ambition, The Indicative Of Intellect.md",
-    "Arkhīf/Qawālib/Ayah Reference.md",
-    "Arkhīf/Qawālib/Book Literature.md",
-    "Masūdāt/Qur’ān/3 - Ali 'Imran/q - 3 - 179.md",
-    "Masūdāt/Qur’ān/3 - Ali 'Imran/q - 3 - 198.md",
-    "Masūdāt/Qur’ān/3 - Ali 'Imran/q - 3 - 196.md",
-    "Qur’ān/99 - Az-Zalzalah/q - Az-Zalzalah (99).md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 8.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 7.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 6.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 5.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 4.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 3.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 2.md",
-    "Qur’ān/99 - Az-Zalzalah/q - 99 - 1.md",
-    "Qur’ān/98 - Al-Bayyinah/q - Al-Bayyinah (98).md",
-    "Qur’ān/98 - Al-Bayyinah/q - 98 - 8.md",
-    "Qur’ān/98 - Al-Bayyinah/q - 98 - 7.md",
-    "Qur’ān/98 - Al-Bayyinah/q - 98 - 5.md",
-    "Qur’ān/98 - Al-Bayyinah/q - 98 - 6.md",
-    "Qur’ān/98 - Al-Bayyinah/q - 98 - 4.md",
-    "Qur’ān/98 - Al-Bayyinah/q - 98 - 3.md",
-    "Qur’ān/99 - Az-Zalzalah",
-    "Qur’ān/98 - Al-Bayyinah",
-    "Qur’ān/97 - Al-Qadr",
-    "Qur’ān/96 - Al-'Alaq",
-    "Qur’ān/95 - At-Tin",
-    "Qur’ān/94 - Ash-Sharh",
-    "Qur’ān/93 - Ad-Duhaa",
-    "Qur’ān/92 - Al-Layl",
-    "Qur’ān/91 - Ash-Shams",
-    "Qur’ān/90 - Al-Balad",
+    "Masūdāt/Qur’ān/التكوير · At-Takwir/التكوير · At-Takwir · 8.md",
+    "Masūdāt/Qur’ān/الإخلاص · Al-Ikhlas/الإخلاص · Al-Ikhlas · 2.md",
+    "Masūdāt/Qur’ān/الإخلاص · Al-Ikhlas/الإخلاص · Al-Ikhlas · 4.md",
+    "Arkhīf/Sijillāt/Qur’ān.base",
+    "Mudawwanāt/Preparation Is The Perpetual Pursuit.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 9.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 8.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 7.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 6.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 5.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 4.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 3.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 2.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 17.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 16.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 15.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 14.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 13.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 12.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 11.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 10.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq/الطارق · At-Tariq · 1.md",
+    "Masūdāt/Qur’ān/الطارق · At-Tariq",
+    "Masūdāt/Qur’ān/الصف · As-Saf/الصف · As-Saf.md",
+    "Masūdāt/Qur’ān/الصف · As-Saf/الصف · As-Saf · 9.md",
+    "Masūdāt/Qur’ān/الصف · As-Saf/الصف · As-Saf · 8.md",
+    "Masūdāt/Qur’ān/الصف · As-Saf/الصف · As-Saf · 7.md",
+    "Masūdāt/Qur’ān/الصف · As-Saf",
+    "Masūdāt/Qur’ān/الصافات · As-Saffat",
+    "Masūdāt/Qur’ān/الشورى · Ash-Shuraa",
+    "Masūdāt/Qur’ān/الشمس · Ash-Shams",
+    "Masūdāt/Qur’ān/الشعراء · Ash-Shu'ara",
+    "Masūdāt/Qur’ān/الشرح · Ash-Sharh",
+    "Masūdāt/Qur’ān/السجدة · As-Sajdah",
+    "Masūdāt/Qur’ān/الزمر · Az-Zumar",
+    "Masūdāt/Journals/WIN_20261023_16_19_19_Pro.jpg",
+    "Arkhīf/Murfaqāt/Pasted image 20261018164155.png",
+    "Arkhīf/Murfaqāt/Pasted image 20261020104214.png",
+    "Arkhīf/Murfaqāt/Tagging_with_Templates.png",
+    "Arkhīf/Murfaqāt/Pasted image 20261116085324.png",
     "Arkhīf/Lawḥāt/11062026 - Ilmon'sVaultStructure.canvas",
     "Arkhīf/Murfaqāt/11012026 - examtomorrowbutthisishype.png",
     "Arkhīf/Murfaqāt/20261107 - perfectedtheliteratureflow.png",
     "Arkhīf/20261107 - perfectedtheliteratureflow.png",
     "20261107 - perfectedtheliteratureflow.png",
     "Murfaqāt/20261107 - perfectedtheliteratureflow.png",
-    "Murfaqāt/Pasted image 20261107115432.png",
-    "Attachments/Pasted image 20261101192337.png",
-    "Attachments/Tagging_with_Templates.png",
-    "Attachments/WIN_20261023_16_19_19_Pro.jpg",
-    "Attachments/WIN_20261023_16_18_44_Pro.jpg",
     "Tiesin Workflow Overview V1.canvas"
   ]
 }

@@ -76,8 +76,13 @@ The organization on step 3 allows for a **grappling** with earlier insights, an 
 How elegant is that?
 
 ## Writing Workflow
+[[The Calamity Of Aberrated Cogitation]] expanded on thinking as a risky endeavor regardless of its esoteric pursuits.
+And in those intimidation and warnings surrounding the writing process, I've found constraints, anti-definitions *(and what writing shouldn't be)* and guardrails directing me towards a simplistic minimal yet extremely delegent writing flow:
+1. The reading and careful **understanding** of what is **meant** of the words read.
+2. The **precise** reformulation of said words, or the exact transmissions of them.
+Number 1 and 2 are the literature flow, the most straightforward.
+3. The synthesis, and careful when I say synthesis as it underlies many dangers so here is a redefinition: In synthesis you use the pre-existing building blocs from number 1 and 2 in constructing a flow of them. A flow that is captivating and insightful.
 
-Haven't wrote much, don't know much.
 
 ## Production Workflow
 

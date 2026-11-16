@@ -1,0 +1,5 @@
+views:
+  - type: table
+    name: View
+  - type: list
+    name: AyatOfThisSurah

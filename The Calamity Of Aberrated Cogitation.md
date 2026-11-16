@@ -7,3 +7,4 @@ As I've been trespassing a not just intricate, sophisticated and highly esoteric
 But second of all, it's a rigor so paramount and indispensable, that to disparage or scorn *(which is what I did)* is **a declaration of deviation and aberration**.
 
 And lastly, **the dire threat of idolatry** *(even unintended)* let alone **the dissemination** of it are sufficient to decide.
+
