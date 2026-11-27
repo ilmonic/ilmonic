@@ -1,0 +1,39 @@
+/* Quran fonts for Obsidian */
+
+/* Uthmanic Hafs font for Arabic ayah content */
+@font-face {
+  font-family: "Uthmanic Hafs";
+  src: local("KFGQPC HAFS Uthmanic Script"),
+       url("file:///C:/ilmon/Masūdāt/quran_querer/data/fonts/UthmanicHafs1-Ver17.ttf");
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* Surah Names font for Arabic surah name */
+@font-face {
+  font-family: "Surah Names";
+  src: local("icomoon"),
+       url("file:///C:/ilmon/Masūdāt/quran_querer/data/fonts/surah_names.ttf");
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* Arabic content in ayah notes */
+.quran-arabic {
+  font-family: "Uthmanic Hafs", "KFGQPC HAFS Uthmanic Script", "Traditional Arabic", serif;
+  font-size: 1.4em;
+  line-height: 1.8;
+  direction: rtl;
+}
+
+/* Bismillah callout in surah notes */
+.callout[data-callout="quote"] .callout-title {
+  font-family: "Uthmanic Hafs", "KFGQPC HAFS Uthmanic Script", "Traditional Arabic", serif;
+  font-size: 1.5em;
+  direction: rtl;
+}
+
+/* Surah Arabic name in frontmatter */
+[data-property-key="surahArabicName"] {
+  font-family: "Surah Names", "Uthmanic Hafs", "Traditional Arabic", serif;
+  font-size: 1.2em;
+  direction: rtl;
+}
